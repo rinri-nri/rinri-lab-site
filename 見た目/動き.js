@@ -123,12 +123,48 @@ if (!静か && matchMedia("(hover: hover) and (pointer: fine)").matches) {
 
 // --- ページの切り替え: 黒い丸が広がり、次のページの色の丸が追いかける（動画のアイリスと同じ形） ---
 const 幕の時間 = 620;  // style.css の .iris の transition が終わるまで
+
+// --- 同じページの中の移動（SCROLL ↓ や、トップでの「動画」など）: ゆっくり加速して、ゆっくり止まる ---
+// ブラウザの標準のなめらかなスクロールは速く、飛んだように見えた（本人）。距離に応じて 0.7〜1.4秒かけて動かす
+let 移動の番号 = 0;
+function ゆっくり進む(目的) {
+  const 余白 = parseFloat(getComputedStyle(目的).scrollMarginTop) || 0;
+  const 始め = scrollY;
+  const 終わり = Math.min(目的.getBoundingClientRect().top + scrollY - 余白, document.documentElement.scrollHeight - innerHeight);
+  const 距離 = 終わり - 始め;
+  const 時間 = Math.min(1400, Math.max(700, 500 + Math.abs(距離) * 0.3));
+  const 番号 = ++移動の番号;
+  const 開始 = performance.now();
+  const 曲線 = t => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;  // ゆっくり→速く→ゆっくり
+  const 一コマ = 今 => {
+    if (番号 !== 移動の番号) return;  // 途中でホイールなどを動かしたら、そこでやめる
+    const t = Math.min(1, (今 - 開始) / 時間);
+    scrollTo({ top: 始め + 距離 * 曲線(t), behavior: "instant" });  // CSS の smooth と重ならないように instant
+    if (t < 1) requestAnimationFrame(一コマ);
+  };
+  requestAnimationFrame(一コマ);
+}
+for (const 種類 of ["wheel", "touchstart", "keydown"]) addEventListener(種類, () => { 移動の番号++; }, { passive: true });
+
+// index.html と / は同じページとして扱う（公開先では / で開かれるため、別のページへの移動と取り違えていた）
+function 同じページ(url) {
+  const 道 = p => p.replace(/index\.html$/, "");
+  return 道(url.pathname) === 道(location.pathname);
+}
+
 document.addEventListener("click", e => {
   const a = e.target.closest("a");
   if (静か || !a || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || a.target) return;
   const 行き先 = new URL(a.href, location.href);
   if (行き先.origin !== location.origin) return;
-  if (行き先.pathname === location.pathname && 行き先.hash) return;  // 同じページの中の移動はそのまま
+  if (同じページ(行き先) && 行き先.hash) {
+    const 目的 = document.getElementById(decodeURIComponent(行き先.hash.slice(1)));
+    if (!目的) return;
+    e.preventDefault();
+    history.pushState(null, "", 行き先.hash);
+    ゆっくり進む(目的);
+    return;
+  }
   e.preventDefault();
   const キーで押した = e.detail === 0;  // キーボードのときは画面の真ん中から
   const 幕 = document.createElement("div");
