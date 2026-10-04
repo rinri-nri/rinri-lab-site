@@ -90,6 +90,35 @@ addEventListener("scroll", 頼む, { passive: true });
 addEventListener("resize", 頼む);
 描く();
 
+// --- カーソル: 点はマウスの位置に、差し色の丸は少し遅れて追いかける。押せるものの上では丸が大きくなる ---
+// マウスで操作する端末だけ（タッチの端末には出さない）
+if (!静か && matchMedia("(hover: hover) and (pointer: fine)").matches) {
+  const 点 = document.querySelector(".cursor-dot");
+  const 丸 = document.querySelector(".cursor-ring");
+  const 追いつく割合 = 0.18;  // 1コマごとに、残りの距離のこの割合だけ近づく（小さいほど遅れる）
+  let 目標x = -100, 目標y = -100, 丸x = -100, 丸y = -100, 動いている = false;
+  document.documentElement.classList.add("custom-cursor");
+
+  const 追う = () => {
+    丸x += (目標x - 丸x) * 追いつく割合;
+    丸y += (目標y - 丸y) * 追いつく割合;
+    丸.style.transform = `translate3d(${丸x}px, ${丸y}px, 0)`;
+    動いている = Math.abs(目標x - 丸x) + Math.abs(目標y - 丸y) > 0.3;
+    if (動いている) requestAnimationFrame(追う);
+  };
+  addEventListener("pointermove", e => {
+    if (e.pointerType !== "mouse") return;
+    目標x = e.clientX; 目標y = e.clientY;
+    点.style.transform = `translate3d(${目標x}px, ${目標y}px, 0)`;
+    点.classList.remove("away"); 丸.classList.remove("away");
+    丸.classList.toggle("hover", !!e.target.closest("a, button"));
+    if (!動いている) { 動いている = true; requestAnimationFrame(追う); }
+  }, { passive: true });
+  addEventListener("pointerdown", () => 丸.classList.add("down"));
+  addEventListener("pointerup", () => 丸.classList.remove("down"));
+  document.documentElement.addEventListener("mouseleave", () => { 点.classList.add("away"); 丸.classList.add("away"); });
+}
+
 // --- ページの切り替え: 黒い丸が広がり、次のページの色の丸が追いかける（動画のアイリスと同じ形） ---
 const 幕の時間 = 620;  // style.css の .iris の transition が終わるまで
 document.addEventListener("click", e => {

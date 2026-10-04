@@ -84,7 +84,9 @@ img { max-width: 100%; display: block; }
 /* --- 上の帯 --- */
 .topnav { position: sticky; top: 12px; z-index: 50; width: min(1000px, calc(100% - 2 * var(--s2))); margin: 12px auto 0;
   display: flex; justify-content: space-between; align-items: center; padding: 10px var(--s2); }
-.topnav .logo { font-weight: 800; font-size: 18px; text-decoration: none; }
+.topnav .logo { font-weight: 800; font-size: 18px; text-decoration: none; display: flex; align-items: center; gap: 10px; }
+/* チャンネルのアイコン（YouTube と同じ丸）。素材は VideoProject/参考資料/チャンネルアイコン.png を縮めたもの */
+.logo-icon { width: 34px; height: 34px; border-radius: 50%; border: 2px solid var(--ink); }
 .topnav .links a { font-weight: 800; font-size: 13px; margin-left: var(--s2); text-decoration: none; }
 .topnav .links a:hover { text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 4px; }
 .nav-right { display: flex; align-items: center; gap: var(--s2); }
@@ -201,7 +203,8 @@ img { max-width: 100%; display: block; }
 
 /* --- このチャンネルについて --- */
 .quote { font-size: clamp(24px, 4vw, 44px); line-height: 1.6; margin: 0 0 var(--s4); max-width: 18em; }
-.about { padding: var(--s3); font-size: 16px; }
+.about { padding: var(--s3); font-size: 16px; display: grid; grid-template-columns: 140px 1fr; gap: var(--s3); align-items: start; }
+.about-icon { width: 140px; height: 140px; border-radius: 50%; border: var(--line) solid var(--ink); rotate: -4deg; }
 .about p + p { margin-top: var(--s2); }
 .buttons { display: flex; gap: var(--s2); flex-wrap: wrap; margin-top: var(--s3); }
 .btn { display: inline-block; font-weight: 800; text-decoration: none; padding: 12px 22px; background: var(--paper); border: var(--line) solid var(--ink); box-shadow: 4px 4px 0 var(--shade); transition: translate .12s, box-shadow .12s; }
@@ -247,7 +250,9 @@ th { background: var(--strong); color: var(--on-strong); text-align: left; paddi
 td { padding: 14px; border-top: 2px solid var(--ink); vertical-align: top; }
 tr:not(:first-child) { transition: background .15s; }
 tr:not(:first-child):hover { background: color-mix(in srgb, var(--accent) 30%, var(--paper)); }
-.js .table-box tr:not(:first-child) { opacity: 0; translate: -24px 0; transition: opacity .4s, translate .5s var(--bounce), background .15s; transition-delay: calc(var(--d) * 45ms); }
+/* 行が順に流れ込む遅れ（--d）は、出てくる動きだけに付ける。ホバーの色にまで付けると、下の行ほど反応が遅れた（本人） */
+.js .table-box tr:not(:first-child) { opacity: 0; translate: -24px 0; transition: opacity .4s, translate .5s var(--bounce), background .15s;
+  transition-delay: calc(var(--d) * 45ms), calc(var(--d) * 45ms), 0s; }
 .js .table-box.in tr:not(:first-child) { opacity: 1; translate: 0 0; }
 td.ts { white-space: nowrap; width: 1%; font-size: 15px; }
 .src-title { font-weight: 800; overflow-wrap: anywhere; }
@@ -264,6 +269,20 @@ footer { margin-top: var(--s4); background: var(--strong); color: var(--on-stron
 .footband .track { font-size: clamp(18px, 2.4vw, 28px); line-height: 1.3; gap: 24px; animation-duration: 90s; }
 .footband .track span:nth-of-type(even) { font-family: "LINE Seed JP", sans-serif; font-style: normal; }
 footer p { text-align: center; font-size: 12px; }
+
+/* --- カーソル（動き.js がマウスの位置を伝える）: 小さな点がそのまま付き、差し色の丸が遅れて追いかける。
+   押せるものに乗ると丸が大きくなる。マウスの無い端末と、動きを減らす設定の人には出さない --- */
+.cursor-dot, .cursor-ring { position: fixed; left: 0; top: 0; pointer-events: none; z-index: 200; border-radius: 50%; display: none; }
+.custom-cursor .cursor-dot, .custom-cursor .cursor-ring { display: block; }
+.custom-cursor, .custom-cursor * { cursor: none !important; }
+.cursor-dot { width: 8px; height: 8px; margin: -4px 0 0 -4px; background: var(--ink); }
+/* ライトでは地も差し色なので、黒い線で囲んで見えるようにする */
+.cursor-ring { width: 34px; height: 34px; margin: -17px 0 0 -17px; background: var(--accent); border: 2px solid var(--ink);
+  transition: scale .25s var(--bounce), opacity .2s; }
+.cursor-ring.hover { scale: 2.1; opacity: .55; }
+.cursor-ring.down { scale: .8; }
+.cursor-ring.hover.down { scale: 1.8; }
+.cursor-ring.away, .cursor-dot.away { opacity: 0; }
 
 /* --- ページの切り替え（動き.js が付ける幕） --- */
 .iris { position: fixed; inset: 0; z-index: 100; pointer-events: none; }
@@ -290,6 +309,8 @@ footer p { text-align: center; font-size: 12px; }
   .node.r .node-q { rotate: -2deg; }
   .end-card { grid-template-columns: 1fr; }
   .end-thumb { border-right: 0; border-bottom: var(--line) solid var(--ink); }
+  .about { grid-template-columns: 1fr; }
+  .about-icon { width: 96px; height: 96px; }
   td.ts { white-space: normal; }
 }
 

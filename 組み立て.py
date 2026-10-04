@@ -120,6 +120,7 @@ def 枠(題, 中身, サイト, 上へ):
 <html lang="ja"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{escape(題)}</title>
+<link rel="icon" href="{上へ}img/favicon.png">
 <script>document.documentElement.classList.add("js")</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="{FONTS}" rel="stylesheet">
@@ -128,7 +129,8 @@ def 枠(題, 中身, サイト, 上へ):
 <script src="{上へ}assets/動き.js" defer></script>
 </head><body>
 <div class="progress" aria-hidden="true"></div>
-<nav class="box topnav"><a class="logo" href="{上へ}index.html">{escape(サイト['チャンネル名'])}</a>
+<div class="cursor-dot" aria-hidden="true"></div><div class="cursor-ring" aria-hidden="true"></div>
+<nav class="box topnav"><a class="logo" href="{上へ}index.html"><img class="logo-icon" src="{上へ}img/icon.png" alt="">{escape(サイト['チャンネル名'])}</a>
 <div class="nav-right"><div class="links"><a href="{上へ}index.html#videos">動画</a><a href="{上へ}index.html#about">このチャンネルについて</a><a href="{escape(サイト['youtube'])}">YouTube ↗</a></div>
 {モードの切り替え}</div></nav>
 {中身}
@@ -173,12 +175,13 @@ def トップ(サイト, 動画たち):
 {見出し("テーマの決め方", "HOW WE PICK A THEME")}
 <ol class="steps">{手順}</ol></div></section>
 <section class="sec" id="videos">{大きな英字("videos.", "secword", "data-drift")}{ステッカー("videos")}<div class="wrap">
-{見出し("押したい動画", "FEATURED")}
+{見出し("メインの動画", "MAIN VIDEOS")}
 <div class="cards">{"".join(カード(v, i) for i, v in enumerate(動画たち))}</div></div></section>
 <section class="sec" id="about">{大きな英字("about.", "secword", "data-drift")}{ステッカー("about")}<div class="wrap">
 {見出し("このチャンネルについて", "ABOUT")}
 <p class="quote mincho reveal">{escape(サイト['結びの一言'])}</p>
-<div class="box about reveal">{段落(サイト['作り手'])}<div class="buttons">{ボタン}</div></div></div></section>
+<div class="box about reveal"><img class="about-icon" src="img/icon.png" alt="{escape(サイト['チャンネル名'])}のアイコン">
+<div>{段落(サイト['作り手'])}<div class="buttons">{ボタン}</div></div></div></div></section>
 </main>"""
     return 枠(サイト["チャンネル名"], 中身, サイト, "")
 
