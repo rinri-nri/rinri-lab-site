@@ -61,6 +61,19 @@
 "一言" = "知識を教える学校の入学抽選で、当選した子の読解が約16パーセンタイル高かった"
 
 [["出典"]]
+"時刻" = "6:20"
+"題" = "語彙力・文章理解力の発達に及ぼす読書のジャンルの影響：小学生3年生を対象とした縦断研究"
+"著者" = "上田・猪原・塩谷・小山内, 2017（読書科学 59(3)、J-STAGE で公開）"
+"一言" = "伸びにつながったのは、物語ではなくノンフィクションの読書だった"
+
+[["出典"]]
+"時刻" = "10:38"
+"題" = "The Matthew Effect in Science"
+"著者" = "Merton, 1968"
+"url" = "https://doi.org/10.1126/science.159.3810.56"
+"一言" = "「マタイ効果」の名付け親。有名な科学者ほど手柄が集まる、という話"
+
+[["出典"]]
 "時刻" = "10:38"
 "題" = "Matthew Effects in Reading"
 "著者" = "Stanovich, 1986"
@@ -68,11 +81,39 @@
 "一言" = "読める子はますます読み、差が広がっていく"
 
 [["出典"]]
-"時刻" = "13:59"
+"時刻" = "10:38"
+"題" = "Early Reading Acquisition and Its Relation to Reading Experience and Ability 10 Years Later"
+"著者" = "Cunningham & Stanovich, 1997"
+"url" = "https://doi.org/10.1037/0012-1649.33.6.934"
+"一言" = "小1の読む力が、10年後の読解・語彙・知識を予測した"
+
+[["出典"]]
+"時刻" = "10:38"
 "題" = "Strong Genetic Influence on a UK Nationwide Test of Educational Achievement at the End of Compulsory Education at Age 16"
 "著者" = "Shakeshaft et al., 2013"
 "url" = "https://doi.org/10.1371/journal.pone.0080341"
 "一言" = "英国の16歳の双子1万1117人。国語の成績の差の52％が遺伝"
+
+[["出典"]]
+"時刻" = "10:38"
+"題" = "The Nation's Report Card: 2024 Reading Assessment"
+"著者" = "National Center for Education Statistics, 2025"
+"url" = "https://www.nationsreportcard.gov/"
+"一言" = "米国の読解の点が低い子は、さらに下がっていた"
+
+[["出典"]]
+"時刻" = "13:59"
+"題" = "Intelligence and School Grades: A Meta-Analysis"
+"著者" = "Roth et al., 2015"
+"url" = "https://doi.org/10.1016/j.intell.2015.09.002"
+"一言" = "成績と IQ の相関は 0.54。IQ で説明できる成績の差は3割ほど"
+
+[["出典"]]
+"時刻" = "13:59"
+"題" = "国民健康・栄養調査（日本人の平均身長・平均体重の推移）"
+"著者" = "厚生労働省（社会実情データ図録より）"
+"url" = "https://honkawa2.sakura.ne.jp/2182.html"
+"一言" = "30代男性の平均身長は、1950年の160cmから2010年の171cmへ伸びた"
 
 [["参考"]]
 "題" = "Baseball Study"
