@@ -1,0 +1,87 @@
+# 押したい動画1本ぶん。書き方は 使い方.md
+# 下書き（Claude が台本・概要欄・探究のメモから作った）。流れの文は本人が直す
+
+"番号" = 5
+"題" = "読解力は「知識」か「技術」か？"
+"youtube" = "https://youtu.be/WIgArNItwAE"
+"サムネ" = "005.png"      # 画像/ に置く。無ければ縞模様になる
+"きっかけ" = "国語力って、どうやったら伸びるの？"
+
+# 段落は空行で区切る
+"流れ" = """
+最初の疑問は「国語力はどうやったら伸びるのか」でした。調べると、読む力は語彙・背景知識・文の構造を追う力に分けられ、なかでも背景知識がよく効く、という研究に行き当たりました。
+
+では、学校で教わる読み方のコツはどうなのか。調べると、コツの指導は5〜10時間で効果が頭打ちになっていました。一方、野球に詳しい子は、読解力の高い子より野球の文章をよく理解していました。
+
+ここで「それは読解力が高いのではなく、知っていただけでは？」という疑問が出ました。答えは、そのとおり。そして、それこそが読解力の正体でした。
+
+さらに、読める子はますます読み、差が開いていくこと（マタイ効果）、その差は遺伝だけで決まるのか、と疑問をたどり、「読解力は知識か、技術か」という1本にまとめました。
+"""
+
+[["出典"]]
+"時刻" = "1:55"
+"題" = "Reciprocal Teaching: A Review of the Research"
+"著者" = "Rosenshine & Meister, 1994"
+"url" = "https://doi.org/10.3102/00346543064004479"
+"一言" = "読みながら問いを立てる練習は、回数を増やしても効果が増えなかった"
+
+[["出典"]]
+"時刻" = "1:55"
+"題" = "The Usefulness of Brief Instruction in Reading Comprehension Strategies"
+"著者" = "Willingham, 2006–2007"
+"url" = "https://www.aft.org/ae/winter2006-2007/willingham"
+"一言" = "読み方のコツは、5〜10時間の指導で20〜30時間と同じ効果"
+
+[["出典"]]
+"時刻" = "2:43"
+"題" = "The Role of Knowledge in Discourse Comprehension: A Construction-Integration Model"
+"著者" = "Kintsch, 1988"
+"url" = "https://doi.org/10.1037/0033-295X.95.2.163"
+"一言" = "理解には3つの層があり、深い層は知識で文の隙間を埋めて作られる"
+
+[["出典"]]
+"時刻" = "4:03"
+"題" = "Effect of Prior Knowledge on Good and Poor Readers' Memory of Text"
+"著者" = "Recht & Leslie, 1988"
+"url" = "https://doi.org/10.1037/0022-0663.80.1.16"
+"一言" = "野球に詳しい子は、読解力の高い子より試合の文章をよく再現できた"
+
+[["出典"]]
+"時刻" = "6:20"
+"題" = "Social Studies Instruction and Reading Comprehension"
+"著者" = "Tyner & Kabourek, 2020"
+"url" = "https://fordhaminstitute.org/national/resources/social-studies-instruction-and-reading-comprehension"
+"一言" = "社会科の時間が多い子ほど、5年生の読解の点がわずかに高かった"
+
+[["出典"]]
+"時刻" = "6:20"
+"題" = "A Kindergarten Lottery Evaluation of Core Knowledge Charter Schools"
+"著者" = "Grissmer et al., 2023"
+"url" = "https://doi.org/10.26300/nsbq-hb21"
+"一言" = "知識を教える学校の入学抽選で、当選した子の読解が約16パーセンタイル高かった"
+
+[["出典"]]
+"時刻" = "10:38"
+"題" = "Matthew Effects in Reading"
+"著者" = "Stanovich, 1986"
+"url" = "https://doi.org/10.1598/RRQ.21.4.1"
+"一言" = "読める子はますます読み、差が広がっていく"
+
+[["出典"]]
+"時刻" = "13:59"
+"題" = "Strong Genetic Influence on a UK Nationwide Test of Educational Achievement at the End of Compulsory Education at Age 16"
+"著者" = "Shakeshaft et al., 2013"
+"url" = "https://doi.org/10.1371/journal.pone.0080341"
+"一言" = "英国の16歳の双子1万1117人。国語の成績の差の52％が遺伝"
+
+[["参考"]]
+"題" = "Baseball Study"
+"著者" = "Wikipedia（英語）"
+"url" = "https://en.wikipedia.org/wiki/Baseball_Study"
+"一言" = "野球の実験の概要。最初に全体像をつかむのに使った"
+
+[["参考"]]
+"題" = "Matilda effect"
+"著者" = "Wikipedia（英語）"
+"url" = "https://en.wikipedia.org/wiki/Matilda_effect"
+"一言" = "マタイ効果の論文そのものに起きた、皮肉な手柄の話"

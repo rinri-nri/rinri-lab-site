@@ -1,0 +1,110 @@
+/* りんりの資料室 公式サイトの見た目。色・書体・余白の段はここだけで決める。
+   方針と経緯は VideoProject/docs/agent/official-site/decisions.md
+   ネオブルータリズム（太い黒枠・ずらした黒い影・極太のゴシック）に、疑問の言葉だけ明朝体を使う */
+
+:root {
+  /* 背景色は 色を選ぶ.js が読み込むたびに差し色5色から選ぶ。ここは JS が動かないときの色 */
+  --bg: #3EC3E3;
+  --ink: #111;
+  --paper: #fff;
+  /* 小さな札の色（3色を順に使う） */
+  --tag1: #FF6B9E;
+  --tag2: #5CC8FF;
+  --tag3: #7CE38B;
+  /* 余白の段 */
+  --s1: 8px;
+  --s2: 16px;
+  --s3: 28px;
+  --s4: 64px;
+}
+
+* { box-sizing: border-box; margin: 0; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "LINE Seed JP", sans-serif;
+  line-height: 1.7;
+}
+a { color: inherit; }
+img { max-width: 100%; display: block; }
+
+/* 書体 */
+.mincho { font-family: "Shippori Mincho B1", serif; font-weight: 800; }
+.en { font-family: Montserrat, sans-serif; font-style: italic; font-weight: 800; }
+
+/* 部品: 太枠と影の箱 */
+.box { background: var(--paper); border: 3px solid var(--ink); box-shadow: 6px 6px 0 var(--ink); }
+
+.wrap { max-width: 1000px; margin: 0 auto; padding: var(--s3) var(--s2) var(--s4); }
+
+/* 上の帯 */
+nav { display: flex; justify-content: space-between; align-items: center; padding: 10px var(--s2); margin-bottom: 48px; }
+nav .logo { font-weight: 800; font-size: 18px; text-decoration: none; }
+nav .links a { font-weight: 800; font-size: 13px; margin-left: var(--s2); text-decoration: none; }
+
+/* 区切りの見出し（黒地に白） */
+h2 { font-size: 24px; font-weight: 800; margin: var(--s4) 0 20px; display: inline-block; background: var(--ink); color: var(--paper); padding: 4px 14px; line-height: 1.5; }
+
+/* トップ: 冒頭 */
+.hero { display: grid; grid-template-columns: 1.4fr 1fr; gap: var(--s3); align-items: start; }
+.hero h1 { font-size: 54px; line-height: 1.3; font-weight: 800; }
+.fuda { background: var(--paper); border: 3px solid var(--ink); padding: 0 10px; display: inline-block; transform: rotate(-2deg); box-shadow: 5px 5px 0 var(--ink); }
+.how { padding: 20px; }
+.how h3 { font-size: 14px; margin-bottom: 12px; }
+.step { display: flex; gap: 10px; align-items: center; font-weight: 800; padding: var(--s1) 0; border-bottom: 2px dashed var(--ink); }
+.step:last-child { border: 0; }
+.step i { font-style: normal; width: 28px; height: 28px; border: 3px solid var(--ink); display: grid; place-items: center; font-size: 13px; flex: none; }
+.step:nth-child(3n+2) i { background: var(--tag2); }
+.step:nth-child(3n) i { background: var(--tag1); }
+.step:nth-child(3n+1) i { background: var(--tag3); }
+
+/* トップ: 動画のカード */
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.card { display: block; text-decoration: none; transition: transform .1s, box-shadow .1s; }
+.card:hover { transform: translate(-3px, -3px); box-shadow: 9px 9px 0 var(--ink); }
+.card:active { transform: translate(4px, 4px); box-shadow: 2px 2px 0 var(--ink); }
+.thumb { aspect-ratio: 16 / 9; border-bottom: 3px solid var(--ink); object-fit: cover; width: 100%;
+  background: repeating-linear-gradient(45deg, #eee 0 10px, #ddd 10px 20px); }
+.card .in { padding: 14px; }
+.card b { display: block; font-size: 18px; line-height: 1.45; margin-bottom: var(--s1); }
+.card p { font-size: 13px; }
+.card p .mincho { font-size: 15px; }
+.num { display: inline-block; font-size: 12px; border: 2px solid var(--ink); padding: 0 8px; margin-bottom: var(--s1); background: var(--tag1); }
+.card:nth-child(3n+2) .num { background: var(--tag2); }
+.card:nth-child(3n) .num { background: var(--tag3); }
+
+/* 作り手・入口 */
+.about { padding: var(--s3); }
+.about p + p { margin-top: var(--s2); }
+.buttons { display: flex; gap: var(--s2); flex-wrap: wrap; margin-top: var(--s3); }
+.btn { display: inline-block; font-weight: 800; text-decoration: none; padding: 10px 20px; background: var(--paper); border: 3px solid var(--ink); box-shadow: 4px 4px 0 var(--ink); }
+.btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--ink); }
+.btn.main { background: var(--ink); color: var(--paper); box-shadow: 4px 4px 0 var(--paper); }
+
+/* 動画ページ */
+.v-title { font-size: 40px; line-height: 1.35; font-weight: 800; }
+.v-q { margin-top: var(--s3); font-size: 22px; }
+.v-q small { display: block; font-family: "LINE Seed JP", sans-serif; font-size: 12px; font-weight: 800; }
+.flow { padding: var(--s3); font-size: 16px; }
+.flow p + p { margin-top: var(--s2); }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th { background: var(--ink); color: var(--paper); text-align: left; padding: var(--s1) 12px; }
+td { padding: 12px; border-top: 2px solid var(--ink); vertical-align: top; }
+td.ts { white-space: nowrap; width: 1%; }
+.src-title { font-weight: 800; overflow-wrap: anywhere; }
+.src-by { font-size: 12px; }
+.src-note { font-size: 13px; margin-top: 4px; }
+.refs { padding: var(--s2) var(--s3); }
+.refs li { list-style: none; padding: 12px 0; border-top: 2px dashed var(--ink); }
+.refs li:first-child { border: 0; }
+.back { margin-top: var(--s4); }
+
+footer { margin-top: var(--s4); font-size: 12px; text-align: center; }
+
+@media (max-width: 760px) {
+  .hero, .cards { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 28px; }
+  .v-title { font-size: 28px; }
+  nav .links { display: none; }
+  td.ts { white-space: normal; }
+}
