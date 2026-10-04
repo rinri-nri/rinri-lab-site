@@ -186,7 +186,11 @@ img { max-width: 100%; display: block; }
 
 /* --- 動画のカード --- */
 .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
-.card { display: block; text-decoration: none; transition: translate .15s, box-shadow .15s, rotate .15s; }
+.card { display: block; text-decoration: none; transition: translate .2s ease-out, box-shadow .2s ease-out, rotate .2s ease-out; }
+/* カードはスクロールで現れる .reveal でもあり、そちらの transition が上書きして、ホバーの動きが補間されずに飛んでいた（本人）。
+   両方の動きをまとめて書く。現れる動きにだけ順番の遅れを付ける */
+.js .card.reveal { transition: opacity .5s ease-out, transform .8s var(--bounce), translate .2s ease-out, box-shadow .2s ease-out, rotate .2s ease-out;
+  transition-delay: calc(var(--d, 0) * 110ms), calc(var(--d, 0) * 110ms), 0s, 0s, 0s; }
 .card:hover { translate: -4px -4px; rotate: -1deg; box-shadow: 11px 11px 0 var(--shade); }
 .card:active { translate: 4px 4px; rotate: 0deg; box-shadow: 2px 2px 0 var(--shade); }
 .thumb-wrap { overflow: hidden; border-bottom: var(--line) solid var(--ink); }
