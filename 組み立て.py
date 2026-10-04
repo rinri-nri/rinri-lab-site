@@ -67,7 +67,7 @@ def きっかけ(v):
     "hero": [("？", "maru", "w", "L", "10%", "left:4%", True), ("！", "kaku", "1", "M", "16%", "right:8%", True),
              ("…", "maru", "3", "S", "8%", "left:38%", False), ("※", "kaku", "2", "M", "76%", "left:5%", False),
              ("？", "maru", "k", "S", "44%", "right:3%", False), ("〃", "maru", "1", "S", "78%", "left:30%", False),
-             ("？", "kaku", "3", "L", "66%", "right:12%", True), ("！", "maru", "2", "S", "24%", "left:54%", False)],
+             ("？", "kaku", "3", "L", "66%", "right:12%", False), ("！", "maru", "2", "S", "24%", "left:54%", False)],
     "how": [("？", "maru", "1", "M", "6%", "right:4%", True), ("…", "kaku", "w", "S", "70%", "left:3%", False),
             ("！", "maru", "k", "S", "88%", "right:3%", False)],
     "videos": [("※", "maru", "3", "M", "10%", "right:6%", False), ("？", "kaku", "2", "L", "62%", "right:2%", True),
@@ -149,6 +149,17 @@ def サムネ(v, 上へ):
 
 # --- トップ ----------------------------------------------------
 
+# 最初の画面の下の真ん中に置く「下へ」のボタン。黒い丸の矢印のまわりを、SCROLL DOWN の文字が回る
+# （小さな SCROLL ↓ の文字では目立たなかった: 2026-10-04 本人）
+下へのボタン = (
+    '<a class="cue" href="#how" aria-label="下へスクロール">'
+    '<svg class="cue-ring" viewBox="0 0 120 120" aria-hidden="true">'
+    '<path id="cue-path" d="M60,60 m-47,0 a47,47 0 1,1 94,0 a47,47 0 1,1 -94,0" fill="none"/>'
+    '<text><textPath href="#cue-path" textLength="290">SCROLL DOWN ✱ SCROLL DOWN ✱</textPath></text></svg>'
+    '<span class="cue-core"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" '
+    'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v15M5 12l7 7 7-7"/></svg></span></a>')
+
+
 def カード(v, 順):
     return f"""<a class="box card reveal" style="--d:{順}" href="v/{ページ番号(v)}.html"><div class="thumb-wrap">{サムネ(v, "")}</div><div class="in">
 <span class="num en">No.{ページ番号(v)}</span><b>{escape(v['題'])}</b>
@@ -161,14 +172,14 @@ def トップ(サイト, 動画たち):
     ボタン = f'<a class="btn main" href="{escape(サイト["youtube"])}">YouTube で見る ↗</a>'
     if サイト.get("問い合わせ"):
         ボタン += f'<a class="btn" href="{escape(サイト["問い合わせ"])}">お問い合わせ</a>'
-    中身 = f"""<header class="hero">
+    中身 = f"""<header class="hero top-hero">
 {大きな英字("why.")}
 {ステッカー("hero")}
 <div class="hero-in">
 <p class="kicker en">{escape(サイト['英語名'])} — A ROOM FOR QUESTIONS</p>
 <h1 class="top-title split" aria-label="「{escape(サイト['見出し'])}」{escape(サイト['見出しの続き'])}">「<span class="mincho fuda">{escape(サイト['見出し'])}</span>」<br>{escape(サイト['見出しの続き'])}</h1>
-<a class="cue en" href="#how">SCROLL ↓</a>
-</div></header>
+</div>
+{下へのボタン}</header>
 {帯()}
 <main>
 <section class="sec" id="how">{大きな英字("how.", "secword", "data-drift")}{ステッカー("how")}<div class="wrap">
