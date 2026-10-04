@@ -55,9 +55,9 @@ document.addEventListener("click", e => {
   if (!document.startViewTransition || 静か) { 切り替える(); return; }
   const 枠 = ボタン.getBoundingClientRect();
   const x = 枠.left + 枠.width / 2, y = 枠.top + 枠.height / 2;
-  // いちばん遠い角までの距離の1.2倍まで広げる。ちょうどの距離だと、終わり際の減速で遠い角が最後まで塗り残り、
+  // いちばん遠い角までの距離の1.3倍まで広げる（1.2倍でもまだ端で止まって見えた: 本人）。ちょうどの距離だと、終わり際の減速で遠い角が最後まで塗り残り、
   // 円が途中で止まったように見えた（本人）。少し大きく広げて、減速に入る前に画面を覆い切る
-  const 半径 = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y)) * 1.2;
+  const 半径 = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y)) * 1.3;
   document.startViewTransition(切り替える).ready.then(() => {
     document.documentElement.animate(
       { clipPath: [`circle(0 at ${x}px ${y}px)`, `circle(${半径}px at ${x}px ${y}px)`] },
