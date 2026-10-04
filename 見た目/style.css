@@ -19,6 +19,7 @@
   --strong: var(--black);     /* 強調の地（見出しの帯・ボタン・表の頭など） */
   --on-strong: var(--white);  /* 強調の地の上の文字 */
   --strong-shade: var(--white);  /* 強調の地の箱の影 */
+  --sticker-shade: var(--black); /* 疑問の記号のステッカーの影 */
   /* 小さな札・ステッカーの色（3色を順に使う） */
   --tag1: #FF6B9E;
   --tag2: #5CC8FF;
@@ -48,6 +49,8 @@
   --strong: var(--accent);
   --on-strong: var(--black);
   --strong-shade: var(--ink);
+  /* ステッカーの影は差し色にしない（本人）。地より暗い黒にして、浮いて見えるようにする */
+  --sticker-shade: #000;
 }
 
 * { box-sizing: border-box; margin: 0; }
@@ -119,12 +122,12 @@ img { max-width: 100%; display: block; }
 .hero .stickers { z-index: 1; }
 .st { position: absolute; display: block; will-change: transform; }
 .st b { display: grid; place-items: center; width: var(--size); height: var(--size); font-size: calc(var(--size) * .56); line-height: 1;
-  background: var(--white); color: var(--black); box-shadow: var(--sh) var(--sh) 0 var(--shade); animation: bob 6s ease-in-out infinite; }
+  background: var(--white); color: var(--black); box-shadow: var(--sh) var(--sh) 0 var(--sticker-shade); animation: bob 6s ease-in-out infinite; }
 .st.L { --size: 132px; --sh: 9px; }
 .st.M { --size: 84px; --sh: 6px; }
 .st.S { --size: 48px; --sh: 4px; }
 .st.maru b { border-radius: 50%; }
-.st.fuda b { rotate: -8deg; }
+.st.kaku b { rotate: -8deg; }
 .st.c1 b { background: var(--tag1); }
 .st.c2 b { background: var(--tag2); }
 .st.c3 b { background: var(--tag3); }

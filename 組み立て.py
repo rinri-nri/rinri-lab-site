@@ -62,20 +62,20 @@ def きっかけ(v):
 大きさの段 = {"L": "0.6", "M": "0", "S": "-0.55"}  # 動き.js が「区切りの中心からのずれ × 速さ」だけ動かす
 
 # 置き方: (記号, 形, 色, 大きさ, 縦の位置, 横の位置, スマホでも出すか)。位置は区切りの中での %
-# 形は maru（丸）か fuda（札）、色は 1〜3（札の3色）・w（白）・k（黒）
+# 形は maru（丸）か kaku（四角）。fuda にしないこと（明朝体の札の部品 .fuda の縁と影まで付いてしまう）、色は 1〜3（札の3色）・w（白）・k（黒）
 置き方 = {
-    "hero": [("？", "maru", "w", "L", "10%", "left:4%", True), ("！", "fuda", "1", "M", "16%", "right:8%", True),
-             ("…", "maru", "3", "S", "8%", "left:38%", False), ("※", "fuda", "2", "M", "76%", "left:5%", False),
+    "hero": [("？", "maru", "w", "L", "10%", "left:4%", True), ("！", "kaku", "1", "M", "16%", "right:8%", True),
+             ("…", "maru", "3", "S", "8%", "left:38%", False), ("※", "kaku", "2", "M", "76%", "left:5%", False),
              ("？", "maru", "k", "S", "44%", "right:3%", False), ("〃", "maru", "1", "S", "78%", "left:30%", False),
-             ("？", "fuda", "3", "L", "66%", "right:12%", True), ("！", "maru", "2", "S", "24%", "left:54%", False)],
-    "how": [("？", "maru", "1", "M", "6%", "right:4%", True), ("…", "fuda", "w", "S", "70%", "left:3%", False),
+             ("？", "kaku", "3", "L", "66%", "right:12%", True), ("！", "maru", "2", "S", "24%", "left:54%", False)],
+    "how": [("？", "maru", "1", "M", "6%", "right:4%", True), ("…", "kaku", "w", "S", "70%", "left:3%", False),
             ("！", "maru", "k", "S", "88%", "right:3%", False)],
-    "videos": [("※", "maru", "3", "M", "10%", "right:6%", False), ("？", "fuda", "2", "L", "62%", "right:2%", True),
+    "videos": [("※", "maru", "3", "M", "10%", "right:6%", False), ("？", "kaku", "2", "L", "62%", "right:2%", True),
                ("〃", "maru", "w", "S", "86%", "left:4%", False)],
-    "about": [("！", "fuda", "1", "M", "14%", "right:5%", True), ("？", "maru", "3", "S", "56%", "left:3%", False),
+    "about": [("！", "kaku", "1", "M", "14%", "right:5%", True), ("？", "maru", "3", "S", "56%", "left:3%", False),
               ("…", "maru", "w", "L", "74%", "right:10%", False)],
-    "vhero": [("？", "maru", "w", "L", "10%", "right:6%", True), ("！", "fuda", "1", "S", "18%", "left:3%", False),
-              ("※", "maru", "3", "M", "70%", "right:16%", False), ("〃", "fuda", "2", "S", "60%", "left:40%", False)],
+    "vhero": [("？", "maru", "w", "L", "10%", "right:6%", True), ("！", "kaku", "1", "S", "18%", "left:3%", False),
+              ("※", "maru", "3", "M", "70%", "right:16%", False), ("〃", "kaku", "2", "S", "60%", "left:40%", False)],
 }
 
 
