@@ -70,9 +70,10 @@ img { max-width: 100%; display: block; }
 .cue { display: inline-block; margin-top: var(--s4); font-size: 14px; text-decoration: none; animation: cue 1.6s ease-in-out infinite; }
 @keyframes cue { 50% { transform: translateY(8px); } }
 
-/* 背景の大きな英字（動画の「40th.」と同じ: Montserrat の斜体、小文字＋ピリオド）。白抜きの線で描く */
-.bigword, .secword { position: absolute; z-index: 0; white-space: nowrap; line-height: .8; color: transparent;
-  -webkit-text-stroke: 2px var(--ink); opacity: .28; pointer-events: none; user-select: none; }
+/* 背景の大きな英字（動画の「40th.」と同じ: Montserrat の斜体、小文字＋ピリオド）。
+   塗りつぶしの文字を薄くして置く（白抜きの線はやめた: 2026-10-04 本人） */
+.bigword, .secword { position: absolute; z-index: 0; white-space: nowrap; line-height: .8; color: var(--ink);
+  opacity: .1; pointer-events: none; user-select: none; }
 .bigword { font-size: clamp(150px, 30vw, 480px); right: -.06em; bottom: .08em; }
 .secword { font-size: clamp(96px, 17vw, 260px); left: -.04em; top: -.18em; }
 
@@ -132,8 +133,7 @@ img { max-width: 100%; display: block; }
 .steps li:nth-child(odd) { rotate: -1.5deg; }
 .steps li:nth-child(even) { rotate: 1.5deg; }
 .steps li:last-child { background: var(--ink); color: var(--paper); box-shadow: var(--shadow) var(--shadow) 0 var(--paper); }
-.steps li i { display: block; font-size: 40px; line-height: 1; margin-bottom: 12px; color: transparent; -webkit-text-stroke: 1.5px var(--ink); }
-.steps li:last-child i { -webkit-text-stroke-color: var(--paper); }
+.steps li i { display: block; font-size: 40px; line-height: 1; margin-bottom: 12px; }
 .steps li:not(:last-child)::after { content: "→"; position: absolute; right: -36px; top: 50%; translate: 0 -50%; font-size: 30px; font-weight: 800; color: var(--ink); }
 
 /* --- 動画のカード --- */
@@ -213,9 +213,9 @@ td.ts { white-space: nowrap; width: 1%; font-size: 15px; }
 .back { padding-bottom: var(--s4); }
 
 /* --- 足元: 大きな字が流れる帯 --- */
-footer { margin-top: var(--s4); background: var(--ink); color: var(--paper); border-top: var(--line) solid var(--ink); padding-bottom: var(--s3); }
-.footband { overflow: hidden; padding: var(--s3) 0 var(--s2); }
-.footband .track { font-size: clamp(44px, 9vw, 120px); line-height: 1.1; gap: 40px; animation-duration: 48s; }
+footer { margin-top: var(--s4); background: var(--ink); color: var(--paper); border-top: var(--line) solid var(--ink); padding-bottom: var(--s2); }
+.footband { overflow: hidden; padding: var(--s2) 0 var(--s1); }
+.footband .track { font-size: clamp(18px, 2.4vw, 28px); line-height: 1.3; gap: 24px; animation-duration: 90s; }
 .footband .track span:nth-of-type(even) { font-family: "LINE Seed JP", sans-serif; font-style: normal; }
 footer p { text-align: center; font-size: 12px; }
 
