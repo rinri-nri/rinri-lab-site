@@ -4,10 +4,21 @@
    動きは「要所だけ大胆に」: 最初の画面とスクロールの切り替わりは派手に、本文を読む間は静かに */
 
 :root {
-  /* 背景色は 色を選ぶ.js が読み込むたびに差し色5色から選ぶ。ここは JS が動かないときの色 */
-  --bg: #3EC3E3;
-  --ink: #111;
-  --paper: #fff;
+  /* 差し色は 色を選ぶ.js が読み込むたびに5色から選ぶ。ここは JS が動かないときの色 */
+  --accent: #3EC3E3;
+  /* どちらのモードでも変わらない黒と白（ステッカー・札の文字など、色の付いた地の上に置くもの） */
+  --black: #111;
+  --white: #fff;
+
+  /* ライトモード: 差し色を地にして、黒い線と黒い影 */
+  color-scheme: light;
+  --bg: var(--accent);
+  --ink: var(--black);        /* 文字と線 */
+  --paper: var(--white);      /* 箱の面 */
+  --shade: var(--black);      /* 箱の影 */
+  --strong: var(--black);     /* 強調の地（見出しの帯・ボタン・表の頭など） */
+  --on-strong: var(--white);  /* 強調の地の上の文字 */
+  --strong-shade: var(--white);  /* 強調の地の箱の影 */
   /* 小さな札・ステッカーの色（3色を順に使う） */
   --tag1: #FF6B9E;
   --tag2: #5CC8FF;
@@ -26,6 +37,19 @@
   --swift: cubic-bezier(.7, 0, .3, 1);
 }
 
+/* ダークモード: 動画のフォーマル版の地（#1B1B1F）と箱（ポップ版の地 #26262B）に白い線。
+   差し色は地ではなく、影と強調に回す（2026-10-04 本人: ライトとダークを足す） */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #1B1B1F;
+  --ink: #F4F4F6;
+  --paper: #26262B;
+  --shade: var(--accent);
+  --strong: var(--accent);
+  --on-strong: var(--black);
+  --strong-shade: var(--ink);
+}
+
 * { box-sizing: border-box; margin: 0; }
 html { scroll-behavior: smooth; }
 body {
@@ -33,7 +57,8 @@ body {
   color: var(--ink);
   font-family: "LINE Seed JP", sans-serif;
   line-height: 1.7;
-  overflow-x: clip;  /* 斜めの帯・大きな英字を横にはみ出させても、横スクロールを出さない */
+  overflow-x: clip;  /* 斜めの帯・大きな英字を横にはみ出させても、横スクロールを出さない。
+                      body の指定は画面全体に移されて効かないことがあるので、はみ出す区切り（.bands .sec）にも付けてある */
 }
 a { color: inherit; }
 img { max-width: 100%; display: block; }
@@ -44,14 +69,14 @@ img { max-width: 100%; display: block; }
 .en { font-family: Montserrat, sans-serif; font-style: italic; font-weight: 800; }
 
 /* 部品: 太枠と影の箱 */
-.box { background: var(--paper); border: var(--line) solid var(--ink); box-shadow: var(--shadow) var(--shadow) 0 var(--ink); }
+.box { background: var(--paper); border: var(--line) solid var(--ink); box-shadow: var(--shadow) var(--shadow) 0 var(--shade); }
 /* 部品: 明朝体の札（疑問の言葉に使う） */
-.fuda { background: var(--paper); border: var(--line) solid var(--ink); padding: 0 .3em; display: inline-block; rotate: -2deg; box-shadow: 5px 5px 0 var(--ink); }
+.fuda { background: var(--paper); border: var(--line) solid var(--ink); padding: 0 .3em; display: inline-block; rotate: -2deg; box-shadow: 5px 5px 0 var(--shade); }
 
 .wrap { max-width: 1000px; margin: 0 auto; padding: 0 var(--s2); position: relative; z-index: 1; }
 
 /* --- 上の進み具合の線 --- */
-.progress { position: fixed; inset: 0 0 auto; height: 5px; background: var(--ink); transform-origin: 0 50%; transform: scaleX(var(--p, 0)); z-index: 60; }
+.progress { position: fixed; inset: 0 0 auto; height: 5px; background: var(--strong); transform-origin: 0 50%; transform: scaleX(var(--p, 0)); z-index: 60; }
 
 /* --- 上の帯 --- */
 .topnav { position: sticky; top: 12px; z-index: 50; width: min(1000px, calc(100% - 2 * var(--s2))); margin: 12px auto 0;
@@ -59,6 +84,17 @@ img { max-width: 100%; display: block; }
 .topnav .logo { font-weight: 800; font-size: 18px; text-decoration: none; }
 .topnav .links a { font-weight: 800; font-size: 13px; margin-left: var(--s2); text-decoration: none; }
 .topnav .links a:hover { text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 4px; }
+.nav-right { display: flex; align-items: center; gap: var(--s2); }
+/* ライト／ダークの切り替え。今のモードと反対の絵（ライトなら月、ダークなら太陽）を出す */
+.theme-btn { display: grid; place-items: center; width: 36px; height: 36px; padding: 0; cursor: pointer; color: var(--ink);
+  background: var(--paper); border: var(--line) solid var(--ink); box-shadow: 3px 3px 0 var(--shade); transition: translate .12s, box-shadow .12s; }
+.theme-btn:hover { translate: -2px -2px; box-shadow: 5px 5px 0 var(--shade); }
+.theme-btn:active { translate: 2px 2px; box-shadow: 1px 1px 0 var(--shade); }
+.theme-btn svg { width: 20px; height: 20px; }
+.theme-btn .sun, [data-theme="dark"] .theme-btn .moon { display: none; }
+[data-theme="dark"] .theme-btn .sun { display: block; }
+/* モードを切り替えるとき、押したところから丸く塗り替える（色を選ぶ.js の View Transition） */
+::view-transition-old(root), ::view-transition-new(root) { animation: none; mix-blend-mode: normal; }
 
 /* --- 最初の画面 --- */
 .hero { position: relative; min-height: max(560px, calc(100svh - 70px)); display: grid; place-items: center; overflow: clip; padding: var(--s4) var(--s2); }
@@ -66,7 +102,7 @@ img { max-width: 100%; display: block; }
 .hero-in { position: relative; z-index: 2; max-width: 1000px; width: 100%; }
 /* トップの見出しは2行に決め打ちなので、折り返さず、いちばん長い行（約10.6字ぶん）が幅に収まる大きさにする */
 .top-title { font-size: clamp(22px, calc((100vw - 40px) / 10.6), 100px); line-height: 1.25; font-weight: 800; white-space: nowrap; }
-.kicker { display: inline-block; background: var(--ink); color: var(--paper); padding: 4px 14px; font-size: 13px; margin-bottom: var(--s3); }
+.kicker { display: inline-block; background: var(--strong); color: var(--on-strong); padding: 4px 14px; font-size: 13px; margin-bottom: var(--s3); }
 .cue { display: inline-block; margin-top: var(--s4); font-size: 14px; text-decoration: none; animation: cue 1.6s ease-in-out infinite; }
 @keyframes cue { 50% { transform: translateY(8px); } }
 
@@ -83,7 +119,7 @@ img { max-width: 100%; display: block; }
 .hero .stickers { z-index: 1; }
 .st { position: absolute; display: block; will-change: transform; }
 .st b { display: grid; place-items: center; width: var(--size); height: var(--size); font-size: calc(var(--size) * .56); line-height: 1;
-  background: var(--paper); color: var(--ink); box-shadow: var(--sh) var(--sh) 0 var(--ink); animation: bob 6s ease-in-out infinite; }
+  background: var(--white); color: var(--black); box-shadow: var(--sh) var(--sh) 0 var(--shade); animation: bob 6s ease-in-out infinite; }
 .st.L { --size: 132px; --sh: 9px; }
 .st.M { --size: 84px; --sh: 6px; }
 .st.S { --size: 48px; --sh: 4px; }
@@ -92,7 +128,7 @@ img { max-width: 100%; display: block; }
 .st.c1 b { background: var(--tag1); }
 .st.c2 b { background: var(--tag2); }
 .st.c3 b { background: var(--tag3); }
-.st.ck b { background: var(--ink); color: var(--paper); }
+.st.ck b { background: var(--strong); color: var(--on-strong); }  /* ダークでは黒が地に溶けるので差し色になる */
 .st:nth-child(2n) b { animation-delay: -2s; animation-duration: 7s; }
 .st:nth-child(3n) b { animation-delay: -4s; }
 @keyframes bob { 50% { transform: translateY(-10px) rotate(6deg); } }
@@ -115,9 +151,9 @@ img { max-width: 100%; display: block; }
 @keyframes fade-up { from { opacity: 0; transform: translateY(20px); } }
 
 /* --- 斜めに交差する2本の帯 --- */
-.bands { position: relative; height: 150px; margin-top: -50px; z-index: 3; pointer-events: none; }
+.bands { position: relative; height: 150px; margin-top: -50px; z-index: 3; pointer-events: none; overflow-x: clip; }
 .band { position: absolute; left: -10%; width: 120%; border-block: var(--line) solid var(--ink); padding: 10px 0; overflow: hidden; }
-.band-a { background: var(--ink); color: var(--paper); rotate: -3deg; top: 46px; z-index: 2; }
+.band-a { background: var(--strong); color: var(--on-strong); rotate: -3deg; top: 46px; z-index: 2; }
 .band-b { background: var(--paper); rotate: 2deg; top: 52px; }
 .track { display: flex; gap: 28px; width: max-content; font-size: clamp(18px, 2.4vw, 28px); animation: marquee 32s linear infinite; }
 .track b { font-style: normal; }
@@ -125,9 +161,9 @@ img { max-width: 100%; display: block; }
 @keyframes marquee { to { transform: translateX(-50%); } }
 
 /* --- 区切り --- */
-.sec { position: relative; padding: var(--s5) 0 var(--s4); scroll-margin-top: 40px; }
+.sec { position: relative; padding: var(--s5) 0 var(--s4); scroll-margin-top: 40px; overflow-x: clip; }
 .sec-head { margin-bottom: var(--s3); }
-.sec-head h2 { font-size: clamp(22px, 3vw, 30px); font-weight: 800; display: inline-block; background: var(--ink); color: var(--paper); padding: 4px 16px; line-height: 1.5; rotate: -1deg; }
+.sec-head h2 { font-size: clamp(22px, 3vw, 30px); font-weight: 800; display: inline-block; background: var(--strong); color: var(--on-strong); padding: 4px 16px; line-height: 1.5; rotate: -1deg; }
 .sec-head .en { display: block; font-size: 13px; margin-top: 10px; }
 
 /* スクロールで現れる（動き.js が .in を付ける） */
@@ -139,15 +175,15 @@ img { max-width: 100%; display: block; }
 .steps li { position: relative; padding: 20px 18px 24px; font-weight: 800; font-size: 17px; line-height: 1.5; min-height: 150px; }
 .steps li:nth-child(odd) { rotate: -1.5deg; }
 .steps li:nth-child(even) { rotate: 1.5deg; }
-.steps li:last-child { background: var(--ink); color: var(--paper); box-shadow: var(--shadow) var(--shadow) 0 var(--paper); }
+.steps li:last-child { background: var(--strong); color: var(--on-strong); box-shadow: var(--shadow) var(--shadow) 0 var(--strong-shade); }
 .steps li i { display: block; font-size: 40px; line-height: 1; margin-bottom: 12px; }
 .steps li:not(:last-child)::after { content: "→"; position: absolute; right: -36px; top: 50%; translate: 0 -50%; font-size: 30px; font-weight: 800; color: var(--ink); }
 
 /* --- 動画のカード --- */
 .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
 .card { display: block; text-decoration: none; transition: translate .15s, box-shadow .15s, rotate .15s; }
-.card:hover { translate: -4px -4px; rotate: -1deg; box-shadow: 11px 11px 0 var(--ink); }
-.card:active { translate: 4px 4px; rotate: 0deg; box-shadow: 2px 2px 0 var(--ink); }
+.card:hover { translate: -4px -4px; rotate: -1deg; box-shadow: 11px 11px 0 var(--shade); }
+.card:active { translate: 4px 4px; rotate: 0deg; box-shadow: 2px 2px 0 var(--shade); }
 .thumb-wrap { overflow: hidden; border-bottom: var(--line) solid var(--ink); }
 .thumb { aspect-ratio: 16 / 9; object-fit: cover; width: 100%; transition: scale .4s var(--swift);
   background: repeating-linear-gradient(45deg, #eee 0 10px, #ddd 10px 20px); }
@@ -156,7 +192,7 @@ img { max-width: 100%; display: block; }
 .card b { display: block; font-size: 18px; line-height: 1.45; margin-bottom: var(--s1); }
 .card p { font-size: 13px; }
 .card p .mincho { font-size: 15px; }
-.num { display: inline-block; font-size: 12px; border: 2px solid var(--ink); padding: 0 8px; margin-bottom: var(--s1); background: var(--tag1); }
+.num { display: inline-block; font-size: 12px; color: var(--black); border: 2px solid var(--ink); padding: 0 8px; margin-bottom: var(--s1); background: var(--tag1); }
 .card:nth-child(3n+2) .num { background: var(--tag2); }
 .card:nth-child(3n) .num { background: var(--tag3); }
 
@@ -165,10 +201,10 @@ img { max-width: 100%; display: block; }
 .about { padding: var(--s3); font-size: 16px; }
 .about p + p { margin-top: var(--s2); }
 .buttons { display: flex; gap: var(--s2); flex-wrap: wrap; margin-top: var(--s3); }
-.btn { display: inline-block; font-weight: 800; text-decoration: none; padding: 12px 22px; background: var(--paper); border: var(--line) solid var(--ink); box-shadow: 4px 4px 0 var(--ink); transition: translate .12s, box-shadow .12s; }
-.btn:hover { translate: -2px -2px; box-shadow: 6px 6px 0 var(--ink); }
-.btn:active { translate: 3px 3px; box-shadow: 1px 1px 0 var(--ink); }
-.btn.main { background: var(--ink); color: var(--paper); box-shadow: 4px 4px 0 var(--paper); }
+.btn { display: inline-block; font-weight: 800; text-decoration: none; padding: 12px 22px; background: var(--paper); border: var(--line) solid var(--ink); box-shadow: 4px 4px 0 var(--shade); transition: translate .12s, box-shadow .12s; }
+.btn:hover { translate: -2px -2px; box-shadow: 6px 6px 0 var(--shade); }
+.btn:active { translate: 3px 3px; box-shadow: 1px 1px 0 var(--shade); }
+.btn.main { background: var(--strong); color: var(--on-strong); box-shadow: 4px 4px 0 var(--strong-shade); }
 
 /* --- 動画ページ: 最初の画面 --- */
 .v-title { font-size: clamp(28px, 5.6vw, 68px); line-height: 1.3; font-weight: 800; margin: var(--s1) 0 var(--s3); }
@@ -178,7 +214,7 @@ img { max-width: 100%; display: block; }
 
 /* --- 動画ページ: 疑問の鎖（スクロールに合わせて線が伸びる） --- */
 .chain { position: relative; padding-top: var(--s3); }
-.chain-line { position: absolute; left: 50%; top: 0; bottom: 0; width: 6px; translate: -50% 0; background: rgba(17, 17, 17, .15); }
+.chain-line { position: absolute; left: 50%; top: 0; bottom: 0; width: 6px; translate: -50% 0; background: color-mix(in srgb, var(--ink) 15%, transparent); }
 .chain-line i { position: absolute; inset: 0; background: var(--ink); transform-origin: 50% 0; transform: scaleY(var(--p, 0)); }
 .node { position: relative; width: calc(50% - 48px); margin-bottom: var(--s4); }
 .node.l { margin-right: auto; }
@@ -191,9 +227,9 @@ img { max-width: 100%; display: block; }
 .node-a { padding: 16px 18px; font-size: 15px; }
 .node-a p + p { margin-top: var(--s1); }
 .node-end { width: 100%; margin: 0; padding-top: var(--s3); }
-.node-end .node-no { left: 50%; right: auto; translate: -50% 0; top: -28px; background: var(--ink); color: var(--paper); }
-.end-card { display: grid; grid-template-columns: 1.1fr 1fr; background: var(--ink); color: var(--paper); text-decoration: none; box-shadow: var(--shadow) var(--shadow) 0 var(--paper); transition: translate .15s, box-shadow .15s; }
-a.end-card:hover { translate: -4px -4px; box-shadow: 11px 11px 0 var(--paper); }
+.node-end .node-no { left: 50%; right: auto; translate: -50% 0; top: -28px; background: var(--strong); color: var(--on-strong); }
+.end-card { display: grid; grid-template-columns: 1.1fr 1fr; background: var(--strong); color: var(--on-strong); text-decoration: none; box-shadow: var(--shadow) var(--shadow) 0 var(--strong-shade); transition: translate .15s, box-shadow .15s; }
+a.end-card:hover { translate: -4px -4px; box-shadow: 11px 11px 0 var(--strong-shade); }
 .end-thumb { overflow: hidden; border-right: var(--line) solid var(--ink); }
 .end-thumb .thumb { height: 100%; }
 .end-text { padding: var(--s3); display: flex; flex-direction: column; justify-content: center; gap: 12px; }
@@ -204,10 +240,10 @@ a.end-card:hover { translate: -4px -4px; box-shadow: 11px 11px 0 var(--paper); }
 /* --- 動画ページ: 資料 --- */
 .table-box { overflow: hidden; }
 table { width: 100%; border-collapse: collapse; font-size: 14px; }
-th { background: var(--ink); color: var(--paper); text-align: left; padding: var(--s1) 14px; }
+th { background: var(--strong); color: var(--on-strong); text-align: left; padding: var(--s1) 14px; }
 td { padding: 14px; border-top: 2px solid var(--ink); vertical-align: top; }
 tr:not(:first-child) { transition: background .15s; }
-tr:not(:first-child):hover { background: color-mix(in srgb, var(--bg) 30%, white); }
+tr:not(:first-child):hover { background: color-mix(in srgb, var(--accent) 30%, var(--paper)); }
 .js .table-box tr:not(:first-child) { opacity: 0; translate: -24px 0; transition: opacity .4s, translate .5s var(--bounce), background .15s; transition-delay: calc(var(--d) * 45ms); }
 .js .table-box.in tr:not(:first-child) { opacity: 1; translate: 0 0; }
 td.ts { white-space: nowrap; width: 1%; font-size: 15px; }
@@ -220,7 +256,7 @@ td.ts { white-space: nowrap; width: 1%; font-size: 15px; }
 .back { padding-bottom: var(--s4); }
 
 /* --- 足元: 大きな字が流れる帯 --- */
-footer { margin-top: var(--s4); background: var(--ink); color: var(--paper); border-top: var(--line) solid var(--ink); padding-bottom: var(--s2); }
+footer { margin-top: var(--s4); background: var(--strong); color: var(--on-strong); border-top: var(--line) solid var(--ink); padding-bottom: var(--s2); }
 .footband { overflow: hidden; padding: var(--s2) 0 var(--s1); }
 .footband .track { font-size: clamp(18px, 2.4vw, 28px); line-height: 1.3; gap: 24px; animation-duration: 90s; }
 .footband .track span:nth-of-type(even) { font-family: "LINE Seed JP", sans-serif; font-style: normal; }
@@ -228,9 +264,12 @@ footer p { text-align: center; font-size: 12px; }
 
 /* --- ページの切り替え（動き.js が付ける幕） --- */
 .iris { position: fixed; inset: 0; z-index: 100; pointer-events: none; }
-.iris i { position: absolute; inset: 0; background: var(--ink); clip-path: circle(0 at var(--x) var(--y)); transition: clip-path .42s var(--swift); }
+.iris i { position: absolute; inset: 0; background: var(--black); clip-path: circle(0 at var(--x) var(--y)); transition: clip-path .42s var(--swift); }
 .iris i + i { background: var(--next); transition-delay: .18s; }
 .iris.go i { clip-path: circle(150vmax at var(--x) var(--y)); }
+/* ダークモードでは次のページの地が暗いので、差し色の丸が先に広がり、暗い丸が追いかける */
+[data-theme="dark"] .iris i { background: var(--next); }
+[data-theme="dark"] .iris i + i { background: var(--bg); }
 
 /* --- スマホの幅 --- */
 @media (max-width: 760px) {

@@ -56,8 +56,10 @@ def きっかけ(v):
 # --- 飾りの部品 ------------------------------------------------
 
 # 疑問の記号のステッカー。明朝体の記号を、縁の無い色の形にのせる（2026-10-04 本人: 疑問の記号で統一）。
-# 大きいものほど手前にあるとみなし、スクロールで速く動かす（速さは style.css ではなくここの 大きさの段 で決まる）
-大きさの段 = {"L": "0.32", "M": "0.18", "S": "0.07"}  # data-speed。動き.js が「区切りの中心からのずれ × 速さ」だけ動かす
+# 大きいものほど手前にあるとみなし、スクロールで速く動かす（速さは style.css ではなくここの 大きさの段 で決まる）。
+# data-speed は、本文の流れる速さに足す分。L は本文の1.6倍、M は本文と同じ、S は本文の0.45倍の速さで流れる。
+# 背景の大きな英字（-0.75 = 0.25倍）がいちばん奥。差が小さいと奥行きを感じないと本人が言ったので、ここまで開けた
+大きさの段 = {"L": "0.6", "M": "0", "S": "-0.55"}  # 動き.js が「区切りの中心からのずれ × 速さ」だけ動かす
 
 # 置き方: (記号, 形, 色, 大きさ, 縦の位置, 横の位置, スマホでも出すか)。位置は区切りの中での %
 # 形は maru（丸）か fuda（札）、色は 1〜3（札の3色）・w（白）・k（黒）
@@ -84,7 +86,7 @@ def ステッカー(場所):
         for 記号, 形, 色, 大, 縦, 横, スマホ in 置き方[場所]) + "</div>"
 
 
-def 大きな英字(文字, 種類="bigword", 動き='data-speed="-0.35"'):
+def 大きな英字(文字, 種類="bigword", 動き='data-speed="-0.75"'):
     return f'<div class="{種類} en" {動き} aria-hidden="true">{escape(文字)}</div>'
 
 
@@ -100,6 +102,16 @@ def 見出し(日本語, 英語):
 
 
 # --- ページの外側 ----------------------------------------------
+
+# ライト／ダークの切り替えボタン。押したときの処理は 色を選ぶ.js
+モードの切り替え = (
+    '<button class="theme-btn" type="button" aria-label="ライトモードとダークモードを切り替える">'
+    '<svg class="moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>'
+    '<svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true">'
+    '<circle cx="12" cy="12" r="4.5" fill="currentColor" stroke="none"/>'
+    '<path d="M12 1.5v2.5M12 20v2.5M1.5 12H4M20 12h2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></svg>'
+    '</button>')
+
 
 def 枠(題, 中身, サイト, 上へ):
     """全ページ共通の外側。上へ はトップへの相対パス（"" か "../"）。"""
@@ -117,7 +129,8 @@ def 枠(題, 中身, サイト, 上へ):
 </head><body>
 <div class="progress" aria-hidden="true"></div>
 <nav class="box topnav"><a class="logo" href="{上へ}index.html">{escape(サイト['チャンネル名'])}</a>
-<div class="links"><a href="{上へ}index.html#videos">動画</a><a href="{上へ}index.html#about">このチャンネルについて</a><a href="{escape(サイト['youtube'])}">YouTube ↗</a></div></nav>
+<div class="nav-right"><div class="links"><a href="{上へ}index.html#videos">動画</a><a href="{上へ}index.html#about">このチャンネルについて</a><a href="{escape(サイト['youtube'])}">YouTube ↗</a></div>
+{モードの切り替え}</div></nav>
 {中身}
 <footer><div class="footband" aria-hidden="true"><div class="track en">{足の帯}{足の帯}</div></div>
 <p class="en">© {escape(サイト['英語名'])}</p></footer>
