@@ -55,6 +55,9 @@
 
 * { box-sizing: border-box; margin: 0; }
 html { scroll-behavior: smooth; }
+/* スクロールバーは出さない（本人）。スクロールはできる。どこまで読んだかは上の進み具合の線で分かる */
+html { scrollbar-width: none; }
+html::-webkit-scrollbar { display: none; }
 body {
   background: var(--bg);
   color: var(--ink);
