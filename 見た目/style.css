@@ -74,6 +74,10 @@ img { max-width: 100%; display: block; }
 .mincho { font-family: "Shippori Mincho B1", serif; font-weight: 800; }
 .en { font-family: Montserrat, sans-serif; font-style: italic; font-weight: 800; }
 
+/* 部品: 文節で折り返す短い文（組み立て.py の 文節() が .ph で包む）。切れ目は文節の間だけで、行の長さもそろえる */
+.ph { white-space: nowrap; }
+.phrase { text-wrap: balance; }
+
 /* 部品: 太枠と影の箱 */
 .box { background: var(--paper); border: var(--line) solid var(--ink); box-shadow: var(--shadow) var(--shadow) 0 var(--shade); }
 /* 部品: 明朝体の札（疑問の言葉に使う） */

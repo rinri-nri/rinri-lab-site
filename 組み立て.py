@@ -1,7 +1,8 @@
 """サイト.toml と 動画/*.toml から、公開用の HTML を _site/ に組み立てる。
 
-使い方: python 組み立て.py
-標準ライブラリだけで動く（GitHub の上でも、追加の部品を入れずに動かすため）。
+使い方: python 組み立て.py（最初に1回だけ python -m pip install -r requirements.txt）
+部品は BudouX だけ。見出しを文節の切れ目で折り返すために使う（ブラウザの機能だけでは iPhone の Safari で効かないため。2026-10-04 本人）。
+それ以外は標準ライブラリだけで動く。
 出力のパスは英数字だけにする（日本語のURLは、共有したときに長い記号の列に化けるため）。
 """
 
@@ -10,6 +11,8 @@ import sys
 import tomllib
 from html import escape
 from pathlib import Path
+
+import budoux
 
 ここ = Path(__file__).parent
 出力 = ここ / "_site"
@@ -42,6 +45,16 @@ def 動画を読む():
 
 def 段落(文):
     return "".join(f"<p>{escape(p.strip())}</p>" for p in 文.strip().split("\n\n") if p.strip())
+
+
+# 見出し・札・カードの題などの短い文は、文節（意味のまとまり）の切れ目でだけ折り返す。
+# 文字の途中で折り返すと、狭い画面で「技 ／ 術」「伸びる ／ の？」のように言葉が切れた（本人）。
+# 文節ごとに折り返さない span で包み、切れ目は span と span の間だけにする。長い本文には使わない（右端がでこぼこになる）
+文節に分ける部品 = budoux.load_default_japanese_parser()
+
+
+def 文節(文):
+    return "".join(f'<span class="ph">{escape(塊)}</span>' for 塊 in 文節に分ける部品.parse(文))
 
 
 def ページ番号(v):
@@ -98,7 +111,7 @@ def 帯():
 
 
 def 見出し(日本語, 英語):
-    return f'<div class="sec-head reveal"><h2>{escape(日本語)}</h2><span class="en">{escape(英語)}</span></div>'
+    return f'<div class="sec-head reveal"><h2>{文節(日本語)}</h2><span class="en">{escape(英語)}</span></div>'
 
 
 # --- ページの外側 ----------------------------------------------
@@ -162,12 +175,12 @@ def サムネ(v, 上へ):
 
 def カード(v, 順):
     return f"""<a class="box card reveal" style="--d:{順}" href="v/{ページ番号(v)}.html"><div class="thumb-wrap">{サムネ(v, "")}</div><div class="in">
-<span class="num en">No.{ページ番号(v)}</span><b>{escape(v['題'])}</b>
-<p>きっかけ：<span class="mincho">{escape(きっかけ(v))}</span></p></div></a>"""
+<span class="num en">No.{ページ番号(v)}</span><b class="phrase">{文節(v['題'])}</b>
+<p class="phrase">きっかけ：<span class="mincho">{文節(きっかけ(v))}</span></p></div></a>"""
 
 
 def トップ(サイト, 動画たち):
-    手順 = "".join(f'<li class="box reveal" style="--d:{i}"><i class="en">{i:02d}</i><span>{escape(s)}</span></li>'
+    手順 = "".join(f'<li class="box reveal" style="--d:{i}"><i class="en">{i:02d}</i><span class="phrase">{文節(s)}</span></li>'
                  for i, s in enumerate(サイト["決め方"], 1))
     ボタン = f'<a class="btn main" href="{escape(サイト["youtube"])}">YouTube で見る ↗</a>'
     if サイト.get("問い合わせ"):
@@ -190,7 +203,7 @@ def トップ(サイト, 動画たち):
 <div class="cards">{"".join(カード(v, i) for i, v in enumerate(動画たち))}</div></div></section>
 <section class="sec" id="about">{大きな英字("about.", "secword", "data-drift")}{ステッカー("about")}<div class="wrap">
 {見出し("このチャンネルについて", "ABOUT")}
-<p class="quote mincho reveal">{escape(サイト['結びの一言'])}</p>
+<p class="quote mincho phrase reveal">{文節(サイト['結びの一言'])}</p>
 <div class="box about reveal"><img class="about-icon" src="img/icon.png" alt="{escape(サイト['チャンネル名'])}のアイコン">
 <div>{段落(サイト['作り手'])}<div class="buttons">{ボタン}</div></div></div></div></section>
 </main>"""
@@ -214,11 +227,11 @@ def 資料(r):
 def 疑問の鎖(v):
     段たち = "".join(
         f"""<div class="node {'l' if i % 2 else 'r'} reveal"><span class="node-no en">Q{i}</span>
-<p class="node-q mincho fuda">{escape(段['疑問'])}</p>
+<p class="node-q mincho fuda phrase">{文節(段['疑問'])}</p>
 {f'<div class="box node-a">{段落(段["分かったこと"])}</div>' if 段.get("分かったこと") else ""}</div>"""
         for i, 段 in enumerate(v["流れ"], 1))
     終わりの中 = f"""<div class="end-thumb">{サムネ(v, "../")}</div><div class="end-text">
-<span class="en">AND THEN — IT BECAME A VIDEO</span><b>{escape(v['題'])}</b>
+<span class="en">AND THEN — IT BECAME A VIDEO</span><b class="phrase">{文節(v['題'])}</b>
 {'<span class="btn main">YouTube で見る ↗</span>' if v.get("youtube") else ""}</div>"""
     if v.get("youtube"):
         終わり = f'<a class="box end-card" href="{escape(v["youtube"])}">{終わりの中}</a>'
@@ -234,8 +247,8 @@ def 動画ページ(サイト, v):
 {ステッカー("vhero")}
 <div class="hero-in">
 <span class="num en">No.{ページ番号(v)}</span>
-<h1 class="v-title split" aria-label="{escape(v['題'])}">{escape(v['題'])}</h1>
-<div class="v-q"><span class="mincho fuda"><small>きっかけの疑問</small>{escape(きっかけ(v))}</span></div>
+<h1 class="v-title split phrase" aria-label="{escape(v['題'])}">{文節(v['題'])}</h1>
+<div class="v-q"><span class="mincho fuda phrase"><small>きっかけの疑問</small>{文節(きっかけ(v))}</span></div>
 </div></header>
 {帯()}
 <main>

@@ -23,6 +23,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"   # tomllib は 3.11 から
+      - run: python -m pip install -r requirements.txt
       - run: python 組み立て.py
       - uses: actions/upload-pages-artifact@v3
         with:
