@@ -70,7 +70,7 @@ function 描く() {
   if (!静か) {
     for (const el of 浮くもの) {
       const r = el.closest("header, section").getBoundingClientRect();
-      el.style.transform = `translate3d(0, ${(r.top + r.height / 2 - 高さ / 2) * +el.dataset.speed}px, 0)`;
+      el.style.translate = `0 ${(r.top + r.height / 2 - 高さ / 2) * +el.dataset.speed}px`;
     }
     for (const el of 流れる字) {
       const r = el.parentElement.getBoundingClientRect();
@@ -91,6 +91,8 @@ addEventListener("resize", 頼む);
 描く();
 
 // --- カーソル: 点はマウスの位置に、差し色の丸は少し遅れて追いかける。押せるものの上では丸が大きくなる ---
+// 位置は transform ではなく translate で動かす。transform で動かすと、CSS の scale（丸を大きくする）が
+// 位置ごと拡大してしまい、ホバーで丸があらぬ場所へずれた（本人）。ステッカーも同じ理由で translate
 // マウスで操作する端末だけ（タッチの端末には出さない）
 if (!静か && matchMedia("(hover: hover) and (pointer: fine)").matches) {
   const 点 = document.querySelector(".cursor-dot");
@@ -102,14 +104,14 @@ if (!静か && matchMedia("(hover: hover) and (pointer: fine)").matches) {
   const 追う = () => {
     丸x += (目標x - 丸x) * 追いつく割合;
     丸y += (目標y - 丸y) * 追いつく割合;
-    丸.style.transform = `translate3d(${丸x}px, ${丸y}px, 0)`;
+    丸.style.translate = `${丸x}px ${丸y}px`;
     動いている = Math.abs(目標x - 丸x) + Math.abs(目標y - 丸y) > 0.3;
     if (動いている) requestAnimationFrame(追う);
   };
   addEventListener("pointermove", e => {
     if (e.pointerType !== "mouse") return;
     目標x = e.clientX; 目標y = e.clientY;
-    点.style.transform = `translate3d(${目標x}px, ${目標y}px, 0)`;
+    点.style.translate = `${目標x}px ${目標y}px`;
     点.classList.remove("away"); 丸.classList.remove("away");
     丸.classList.toggle("hover", !!e.target.closest("a, button"));
     if (!動いている) { 動いている = true; requestAnimationFrame(追う); }

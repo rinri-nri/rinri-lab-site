@@ -122,7 +122,7 @@ img { max-width: 100%; display: block; }
    外側は動き.js がスクロールに合わせて動かし、内側の形はゆっくり揺れる。大きいものほど影も大きい（手前にある感じ） */
 .stickers { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
 .hero .stickers { z-index: 1; }
-.st { position: absolute; display: block; will-change: transform; }
+.st { position: absolute; display: block; will-change: translate; }
 .st b { display: grid; place-items: center; width: var(--size); height: var(--size); font-size: calc(var(--size) * .56); line-height: 1;
   background: var(--white); color: var(--black); box-shadow: var(--sh) var(--sh) 0 var(--sticker-shade); animation: bob 6s ease-in-out infinite; }
 .st.L { --size: 132px; --sh: 9px; }
@@ -275,7 +275,8 @@ footer p { text-align: center; font-size: 12px; }
 .cursor-dot, .cursor-ring { position: fixed; left: 0; top: 0; pointer-events: none; z-index: 200; border-radius: 50%; display: none; }
 .custom-cursor .cursor-dot, .custom-cursor .cursor-ring { display: block; }
 .custom-cursor, .custom-cursor * { cursor: none !important; }
-.cursor-dot { width: 8px; height: 8px; margin: -4px 0 0 -4px; background: var(--ink); }
+/* 点は丸より手前に置いて、丸に重なっても見えるようにする（本人） */
+.cursor-dot { width: 12px; height: 12px; margin: -6px 0 0 -6px; background: var(--ink); z-index: 201; }
 /* ライトでは地も差し色なので、黒い線で囲んで見えるようにする */
 .cursor-ring { width: 34px; height: 34px; margin: -17px 0 0 -17px; background: var(--accent); border: 2px solid var(--ink);
   transition: scale .25s var(--bounce), opacity .2s; }
