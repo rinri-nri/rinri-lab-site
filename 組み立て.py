@@ -5,7 +5,6 @@
 出力のパスは英数字だけにする（日本語のURLは、共有したときに長い記号の列に化けるため）。
 """
 
-import math
 import shutil
 import sys
 import tomllib
@@ -56,37 +55,36 @@ def きっかけ(v):
 
 # --- 飾りの部品 ------------------------------------------------
 
-def 星の形(角=14, 外=47, 内=36):
-    点 = []
-    for i in range(角 * 2):
-        r = 外 if i % 2 == 0 else 内
-        a = math.pi * i / 角
-        点.append(f"{50 + r * math.sin(a):.1f},{50 - r * math.cos(a):.1f}")
-    return " ".join(点)
+# 疑問の記号のステッカー。明朝体の記号を、縁の無い色の形にのせる（2026-10-04 本人: 疑問の記号で統一）。
+# 大きいものほど手前にあるとみなし、スクロールで速く動かす（速さは style.css ではなくここの 大きさの段 で決まる）
+大きさの段 = {"L": "0.32", "M": "0.18", "S": "0.07"}  # data-speed。動き.js が「区切りの中心からのずれ × 速さ」だけ動かす
 
-
-ステッカーの絵 = {
-    "star": f'<polygon points="{星の形()}" fill="var(--tag1)" stroke="#111" stroke-width="4" stroke-linejoin="round"/>',
-    "q": '<circle cx="50" cy="50" r="44" fill="#fff" stroke="#111" stroke-width="4"/>'
-         '<text x="50" y="68" text-anchor="middle" font-family="Shippori Mincho B1" font-weight="800" font-size="54" fill="#111">？</text>',
-    "wave": '<path d="M6 50 Q 20 22 34 50 T 62 50 T 94 50" fill="none" stroke="#111" stroke-width="9" stroke-linecap="round"/>',
-    "box": '<rect x="14" y="14" width="72" height="72" fill="var(--tag3)" stroke="#111" stroke-width="4"/>',
-    "arrow": '<circle cx="50" cy="50" r="44" fill="#111"/>'
-             '<path d="M28 50 H70 M56 34 L72 50 L56 66" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>',
+# 置き方: (記号, 形, 色, 大きさ, 縦の位置, 横の位置, スマホでも出すか)。位置は区切りの中での %
+# 形は maru（丸）か fuda（札）、色は 1〜3（札の3色）・w（白）・k（黒）
+置き方 = {
+    "hero": [("？", "maru", "w", "L", "10%", "left:4%", True), ("！", "fuda", "1", "M", "16%", "right:8%", True),
+             ("…", "maru", "3", "S", "8%", "left:38%", False), ("※", "fuda", "2", "M", "76%", "left:5%", False),
+             ("？", "maru", "k", "S", "44%", "right:3%", False), ("〃", "maru", "1", "S", "78%", "left:30%", False),
+             ("？", "fuda", "3", "L", "66%", "right:12%", True), ("！", "maru", "2", "S", "24%", "left:54%", False)],
+    "how": [("？", "maru", "1", "M", "6%", "right:4%", True), ("…", "fuda", "w", "S", "70%", "left:3%", False),
+            ("！", "maru", "k", "S", "88%", "right:3%", False)],
+    "videos": [("※", "maru", "3", "M", "10%", "right:6%", False), ("？", "fuda", "2", "L", "62%", "right:2%", True),
+               ("〃", "maru", "w", "S", "86%", "left:4%", False)],
+    "about": [("！", "fuda", "1", "M", "14%", "right:5%", True), ("？", "maru", "3", "S", "56%", "left:3%", False),
+              ("…", "maru", "w", "L", "74%", "right:10%", False)],
+    "vhero": [("？", "maru", "w", "L", "10%", "right:6%", True), ("！", "fuda", "1", "S", "18%", "left:3%", False),
+              ("※", "maru", "3", "M", "70%", "right:16%", False), ("〃", "fuda", "2", "S", "60%", "left:40%", False)],
 }
 
 
-def ステッカー(種類):
-    """ヒーローに散らす飾り。位置・速さ・奥行きは style.css の .st-<種類> と data-* で決める。"""
-    速さ = {"star": "0.45", "q": "-0.15", "wave": "0.25", "box": "0.6", "arrow": "-0.3"}
-    奥行き = {"star": "0.8", "q": "1.4", "wave": "0.5", "box": "1", "arrow": "1.2"}
-    return "".join(
-        f'<span class="st st-{s}" data-speed="{速さ[s]}" data-depth="{奥行き[s]}">'
-        f'<svg viewBox="0 0 100 100">{ステッカーの絵[s]}</svg></span>'
-        for s in 種類)
+def ステッカー(場所):
+    return '<div class="stickers" aria-hidden="true">' + "".join(
+        f'<span class="st {大} {形} c{色}{"" if スマホ else " pc-only"}" style="top:{縦};{横}" '
+        f'data-speed="{大きさの段[大]}"><b class="mincho">{記号}</b></span>'
+        for 記号, 形, 色, 大, 縦, 横, スマホ in 置き方[場所]) + "</div>"
 
 
-def 大きな英字(文字, 種類="bigword", 動き='data-speed="0.35"'):
+def 大きな英字(文字, 種類="bigword", 動き='data-speed="-0.35"'):
     return f'<div class="{種類} en" {動き} aria-hidden="true">{escape(文字)}</div>'
 
 
@@ -150,7 +148,7 @@ def トップ(サイト, 動画たち):
         ボタン += f'<a class="btn" href="{escape(サイト["問い合わせ"])}">お問い合わせ</a>'
     中身 = f"""<header class="hero">
 {大きな英字("why.")}
-<div class="stickers" aria-hidden="true">{ステッカー(["star", "q", "wave", "box", "arrow"])}</div>
+{ステッカー("hero")}
 <div class="hero-in">
 <p class="kicker en">{escape(サイト['英語名'])} — A ROOM FOR QUESTIONS</p>
 <h1 class="top-title split" aria-label="「{escape(サイト['見出し'])}」{escape(サイト['見出しの続き'])}">「<span class="mincho fuda">{escape(サイト['見出し'])}</span>」<br>{escape(サイト['見出しの続き'])}</h1>
@@ -158,13 +156,13 @@ def トップ(サイト, 動画たち):
 </div></header>
 {帯()}
 <main>
-<section class="sec" id="how">{大きな英字("how.", "secword", "data-drift")}<div class="wrap">
+<section class="sec" id="how">{大きな英字("how.", "secword", "data-drift")}{ステッカー("how")}<div class="wrap">
 {見出し("テーマの決め方", "HOW WE PICK A THEME")}
 <ol class="steps">{手順}</ol></div></section>
-<section class="sec" id="videos">{大きな英字("videos.", "secword", "data-drift")}<div class="wrap">
+<section class="sec" id="videos">{大きな英字("videos.", "secword", "data-drift")}{ステッカー("videos")}<div class="wrap">
 {見出し("押したい動画", "FEATURED")}
 <div class="cards">{"".join(カード(v, i) for i, v in enumerate(動画たち))}</div></div></section>
-<section class="sec" id="about">{大きな英字("about.", "secword", "data-drift")}<div class="wrap">
+<section class="sec" id="about">{大きな英字("about.", "secword", "data-drift")}{ステッカー("about")}<div class="wrap">
 {見出し("このチャンネルについて", "ABOUT")}
 <p class="quote mincho reveal">{escape(サイト['結びの一言'])}</p>
 <div class="box about reveal">{段落(サイト['作り手'])}<div class="buttons">{ボタン}</div></div></div></section>
@@ -206,7 +204,7 @@ def 疑問の鎖(v):
 def 動画ページ(サイト, v):
     中身 = f"""<header class="hero vhero">
 {大きな英字(f"no.{ページ番号(v)}")}
-<div class="stickers" aria-hidden="true">{ステッカー(["star", "q", "box"])}</div>
+{ステッカー("vhero")}
 <div class="hero-in">
 <span class="num en">No.{ページ番号(v)}</span>
 <h1 class="v-title split" aria-label="{escape(v['題'])}">{escape(v['題'])}</h1>

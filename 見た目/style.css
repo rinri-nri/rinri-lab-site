@@ -77,19 +77,25 @@ img { max-width: 100%; display: block; }
 .bigword { font-size: clamp(150px, 30vw, 480px); right: -.06em; bottom: .08em; }
 .secword { font-size: clamp(96px, 17vw, 260px); left: -.04em; top: -.18em; }
 
-/* ステッカー（外側は動き.js が動かし、内側の絵はゆっくり揺れる） */
-.stickers { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+/* 疑問の記号のステッカー。縁は付けず、塗りの形と黒い影だけ（縁と影が同じ黒で重なって見えたため、2026-10-04 本人）。
+   外側は動き.js がスクロールに合わせて動かし、内側の形はゆっくり揺れる。大きいものほど影も大きい（手前にある感じ） */
+.stickers { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.hero .stickers { z-index: 1; }
 .st { position: absolute; display: block; will-change: transform; }
-.st svg { width: 100%; height: 100%; overflow: visible; filter: drop-shadow(5px 5px 0 var(--ink)); animation: bob 5s ease-in-out infinite; }
-.st-star { width: 120px; height: 120px; top: 12%; left: 5%; }
-.st-q { width: 130px; height: 130px; top: 14%; right: 7%; }
-.st-q svg { animation-delay: -1.5s; }
-.st-wave { width: 150px; height: 70px; bottom: 16%; left: 9%; }
-.st-wave svg { filter: none; animation-delay: -3s; }
-.st-box { width: 70px; height: 70px; bottom: 14%; right: 22%; }
-.st-box svg { animation-delay: -2s; }
-.st-arrow { width: 84px; height: 84px; top: 66%; right: 4%; }
-@keyframes bob { 50% { transform: translateY(-12px) rotate(8deg); } }
+.st b { display: grid; place-items: center; width: var(--size); height: var(--size); font-size: calc(var(--size) * .56); line-height: 1;
+  background: var(--paper); color: var(--ink); box-shadow: var(--sh) var(--sh) 0 var(--ink); animation: bob 6s ease-in-out infinite; }
+.st.L { --size: 132px; --sh: 9px; }
+.st.M { --size: 84px; --sh: 6px; }
+.st.S { --size: 48px; --sh: 4px; }
+.st.maru b { border-radius: 50%; }
+.st.fuda b { rotate: -8deg; }
+.st.c1 b { background: var(--tag1); }
+.st.c2 b { background: var(--tag2); }
+.st.c3 b { background: var(--tag3); }
+.st.ck b { background: var(--ink); color: var(--paper); }
+.st:nth-child(2n) b { animation-delay: -2s; animation-duration: 7s; }
+.st:nth-child(3n) b { animation-delay: -4s; }
+@keyframes bob { 50% { transform: translateY(-10px) rotate(6deg); } }
 
 /* 見出しの文字が1つずつ跳ねて出る（動き.js が .ch に分ける） */
 .ch { display: inline-block; }
@@ -103,6 +109,7 @@ img { max-width: 100%; display: block; }
 .js .hero .st:nth-child(3) { animation-delay: .3s; }
 .js .hero .st:nth-child(4) { animation-delay: .45s; }
 .js .hero .st:nth-child(5) { animation-delay: .6s; }
+.js .hero .st:nth-child(n+6) { animation-delay: .75s; }
 @keyframes sticker-in { from { opacity: 0; scale: 0; } }
 .js .hero .kicker, .js .hero .cue, .js .vhero .num, .js .vhero .v-q { animation: fade-up .6s ease-out .9s backwards; }
 @keyframes fade-up { from { opacity: 0; transform: translateY(20px); } }
@@ -229,9 +236,7 @@ footer p { text-align: center; font-size: 12px; }
 @media (max-width: 760px) {
   .topnav .links { display: none; }
   .st { scale: .6; }
-  .st-wave, .st-arrow { display: none; }
-  .st-star { top: 6%; left: -2%; }
-  .st-q { top: 6%; right: -2%; }
+  .st.pc-only { display: none; }
   .bigword { font-size: 42vw; }
   .steps, .cards { grid-template-columns: 1fr; }
   .steps { gap: 44px; }

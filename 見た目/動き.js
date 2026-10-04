@@ -53,12 +53,14 @@ const 見張り = new IntersectionObserver(出来事 => {
 }, { threshold: 0.15, rootMargin: "0px 0px -8% 0px" });
 document.querySelectorAll(".reveal").forEach(el => 見張り.observe(el));
 
-// --- スクロールとマウスに合わせて動かす ---
+// --- スクロールに合わせて動かす ---
+// 浮くもの: 自分の区切りの中心が画面の中心からずれた分 × data-speed だけ縦に動かす。
+// 速さが大きいほど速く流れ、手前にあるように見える（マウスには追従させない: 2026-10-04 本人）
 const 浮くもの = [...document.querySelectorAll("[data-speed]")];
 const 流れる字 = [...document.querySelectorAll("[data-drift]")];
 const 鎖 = document.querySelector(".chain");
 const 進み具合 = document.querySelector(".progress");
-let マウスx = 0, マウスy = 0, 予約済み = false;
+let 予約済み = false;
 
 function 割合(値) { return Math.min(1, Math.max(0, 値)); }
 
@@ -67,8 +69,8 @@ function 描く() {
   const y = scrollY, 高さ = innerHeight;
   if (!静か) {
     for (const el of 浮くもの) {
-      const 奥 = +(el.dataset.depth || 0);
-      el.style.transform = `translate3d(${マウスx * 奥}px, ${y * +el.dataset.speed + マウスy * 奥}px, 0)`;
+      const r = el.closest("header, section").getBoundingClientRect();
+      el.style.transform = `translate3d(0, ${(r.top + r.height / 2 - 高さ / 2) * +el.dataset.speed}px, 0)`;
     }
     for (const el of 流れる字) {
       const r = el.parentElement.getBoundingClientRect();
@@ -86,12 +88,6 @@ function 描く() {
 function 頼む() { if (!予約済み) { 予約済み = true; requestAnimationFrame(描く); } }
 addEventListener("scroll", 頼む, { passive: true });
 addEventListener("resize", 頼む);
-addEventListener("pointermove", e => {
-  if (e.pointerType !== "mouse") return;
-  マウスx = (e.clientX / innerWidth - 0.5) * 30;
-  マウスy = (e.clientY / innerHeight - 0.5) * 30;
-  頼む();
-}, { passive: true });
 描く();
 
 // --- ページの切り替え: 黒い丸が広がり、次のページの色の丸が追いかける（動画のアイリスと同じ形） ---
