@@ -205,7 +205,10 @@ def トップ(サイト, 動画たち):
 {見出し("このチャンネルについて", "ABOUT")}
 <p class="quote mincho phrase reveal">{文節(サイト['結びの一言'])}</p>
 <div class="box about reveal"><img class="about-icon" src="img/icon.png" alt="{escape(サイト['チャンネル名'])}のアイコン">
-<div>{段落(サイト['作り手'])}<div class="buttons">{ボタン}</div></div></div></div></section>
+<div>{段落(サイト['作り手'])}<div class="buttons">{ボタン}</div></div></div>
+<div class="goal reveal"><p class="kicker en">THE OTHER GOAL</p>
+<h3 class="mincho phrase">{文節(サイト['もうひとつの目標の見出し'])}</h3>
+<div class="box goal-body">{段落(サイト['もうひとつの目標'])}</div></div></div></section>
 </main>"""
     return 枠(サイト["チャンネル名"], 中身, サイト, "")
 

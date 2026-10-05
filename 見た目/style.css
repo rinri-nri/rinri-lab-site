@@ -229,6 +229,12 @@ img { max-width: 100%; display: block; }
 .about { padding: var(--s3); font-size: 16px; display: grid; grid-template-columns: 140px 1fr; gap: var(--s3); align-items: start; }
 .about-icon { width: 140px; height: 140px; border-radius: 50%; border: var(--line) solid var(--ink); rotate: -4deg; }
 .about p + p { margin-top: var(--s2); }
+/* もうひとつの目標（自分の疑問を解消し、勉強すること）。紹介の箱の下に、見出しと本文の箱で置く */
+.goal { margin-top: var(--s4); }
+.goal .kicker { margin-bottom: var(--s2); }
+.goal h3 { font-size: clamp(22px, 3.4vw, 36px); line-height: 1.5; margin-bottom: var(--s3); }
+.goal-body { padding: var(--s3); font-size: 16px; }
+.goal-body p + p { margin-top: var(--s2); }
 .buttons { display: flex; gap: var(--s2); flex-wrap: wrap; margin-top: var(--s3); }
 .btn { display: inline-block; font-weight: 800; text-decoration: none; padding: 12px 22px; background: var(--paper); border: var(--line) solid var(--ink); box-shadow: 4px 4px 0 var(--shade); transition: translate .12s, box-shadow .12s; }
 .btn:hover { translate: -2px -2px; box-shadow: 6px 6px 0 var(--shade); }
