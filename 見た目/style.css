@@ -272,6 +272,20 @@ a.end-card:hover { translate: -4px -4px; box-shadow: 11px 11px 0 var(--strong-sh
 .end-text b { font-size: clamp(20px, 2.6vw, 28px); line-height: 1.4; }
 .end-text .btn.main { align-self: flex-start; background: var(--paper); color: var(--ink); box-shadow: 4px 4px 0 var(--bg); }
 
+/* --- 動画ページ: まとめ画像（横に並べて1枚ずつ送る） --- */
+.slides { display: grid; grid-auto-flow: column; grid-auto-columns: 100%; gap: var(--s3); overflow-x: auto; position: relative;
+  scroll-snap-type: x mandatory; scrollbar-width: none; padding: 0 12px 14px 0; }  /* 右下の余白は影が切れないように */
+.slides::-webkit-scrollbar { display: none; }
+.slide { scroll-snap-align: start; }
+.slide a { display: block; }
+.slide img { width: 100%; height: auto; aspect-ratio: 16 / 9; }
+.slide figcaption { display: flex; gap: 12px; align-items: baseline; margin-top: 12px; font-weight: 800; font-size: 15px; }
+.slide figcaption .en { flex: none; font-size: 13px; }
+.slide-nav { display: flex; align-items: center; justify-content: center; gap: var(--s3); margin-top: var(--s2); }
+.slide-nav .btn { width: 52px; height: 52px; padding: 0; font-size: 20px; cursor: pointer; color: var(--ink); }
+.slide-nav .btn[disabled] { opacity: .35; pointer-events: none; }
+.slide-count { min-width: 4em; text-align: center; }
+
 /* --- 動画ページ: 資料 --- */
 .table-box { overflow: hidden; }
 table { width: 100%; border-collapse: collapse; font-size: 14px; }

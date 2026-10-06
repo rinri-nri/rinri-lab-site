@@ -140,6 +140,7 @@ def 枠(題, 中身, サイト, 上へ):
 <link rel="stylesheet" href="{上へ}assets/style.css">
 <script src="{上へ}assets/色を選ぶ.js"></script>
 <script src="{上へ}assets/動き.js" defer></script>
+<script src="{上へ}assets/まとめの送り.js" defer></script>
 </head><body>
 <div class="progress" aria-hidden="true"></div>
 <div class="cursor-dot" aria-hidden="true"></div><div class="cursor-ring" aria-hidden="true"></div>
@@ -244,6 +245,20 @@ def 疑問の鎖(v):
 <div class="node node-end reveal"><span class="node-no en">→</span>{終わり}</div></div>"""
 
 
+def まとめの送り(まとめ):
+    """まとめ画像を横に並べ、左右のボタン（まとめの送り.js）か指のスワイプで1枚ずつ送る。画像を押すと原寸で開く。"""
+    数 = len(まとめ)
+    枚たち = "".join(
+        f"""<figure class="slide"><a href="../img/{escape(m['画像'])}" target="_blank" rel="noopener">
+<img class="box" src="../img/{escape(m['画像'])}" alt="{escape(m['題'])}" loading="lazy" width="1280" height="720"></a>
+<figcaption><span class="en">{i:02d} / {数:02d}</span><span class="phrase">{文節(m['題'])}</span></figcaption></figure>"""
+        for i, m in enumerate(まとめ, 1))
+    return f"""<div class="slides-box reveal"><div class="slides" tabindex="0" aria-label="まとめ画像（{数}枚）">{枚たち}</div>
+<div class="slide-nav"><button class="btn prev" type="button" aria-label="前のまとめ画像">←</button>
+<span class="slide-count en" aria-live="polite">1 / {数}</span>
+<button class="btn next" type="button" aria-label="次のまとめ画像">→</button></div></div>"""
+
+
 def 動画ページ(サイト, v):
     中身 = f"""<header class="hero vhero">
 {大きな英字(f"no.{ページ番号(v)}")}
@@ -258,6 +273,10 @@ def 動画ページ(サイト, v):
 <section class="sec">{大きな英字("route.", "secword", "data-drift")}<div class="wrap">
 {見出し("ここにたどり着くまで", "THE ROUTE OF QUESTIONS")}
 {疑問の鎖(v)}</div></section>"""
+    if v.get("まとめ"):
+        中身 += f"""<section class="sec">{大きな英字("summary.", "secword", "data-drift")}<div class="wrap">
+{見出し("まとめ", "SUMMARY")}
+{まとめの送り(v["まとめ"])}</div></section>"""
     if v.get("出典"):
         行 = "".join(f'<tr style="--d:{i}"><td class="ts en">{escape(r.get("時刻", ""))}</td><td>{資料(r)}</td></tr>'
                     for i, r in enumerate(v["出典"]))
