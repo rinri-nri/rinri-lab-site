@@ -1,0 +1,166 @@
+# メインの動画1本ぶん。書き方は 使い方.md
+# 下書き（Claude が台本・概要欄・出典の確認から作った。2026-10-07）。流れの文は本人が直す
+# 出典の時刻は、その研究が出る章の始まり（VideoProject の 完成/YouTubeチャプター.txt）
+
+"番号" = 7
+"題" = "AIは、子どもをバカにするのか"
+"youtube" = "https://youtu.be/zo4HkuRTwA8"
+"サムネ" = "007.png"      # 画像/ に置く。無ければ縞模様になる
+# ここにたどり着くまでの疑問の道すじ。上から順に、線でつないだ札になる。
+# 最初の 疑問 が、この動画のきっかけ（トップのカードにも出る）
+[["流れ"]]
+"疑問" = "AIに質問しながら勉強すると、バカになるの？"
+"分かったこと" = "トルコの高校の実験では、答えを渡すAIで練習した生徒は、AIを外した試験で17%点が下がった。答えを渡さないAIでは下がらなかった。"
+
+[["流れ"]]
+"疑問" = "AIは、力のある人ほど伸ばす増幅装置なの？"
+"分かったこと" = "仕事の現場では、AIは経験の浅い人を助けて差を縮めた。けれど大学院の授業では、知識の多い学生と少ない学生の差を広げた。"
+
+[["流れ"]]
+"疑問" = "それなら、苦手な子にはAIを使わせないほうがいいの？"
+"分かったこと" = "使わせないより、答えを渡さないように作り込んだAIのほうが、今の証拠に合う。ハーバードの物理の授業では、教室の授業の2倍以上学べた。"
+
+[["流れ"]]
+"疑問" = "でも、家のスマホでは何でも答えるAIが使えてしまうのでは？"
+"分かったこと" = "そのとおりで、きれいに解決した研究はまだない。家での使い方は、多くの場合、親で決まる。"
+
+[["流れ"]]
+"疑問" = "結局、生まれた家で決まってしまうの？"
+"分かったこと" = "家庭の影響は大きい。それでも、育つ家が変わるとIQは4〜8点変わった。使い方を本人任せにすることが差を広げる、と分かった。ここまでを1本にまとめた。"
+
+# まとめ画像（話の区切りごとの説明画像）。上から順に、左右に送って見る形で並ぶ。
+# 画像は VideoProject の 探究/スマホとAIは子どもをバカにするのか/まとめ_0*.png をコピーしたもの（作り直したら、ここにもコピーし直す）。
+# 題は画像の代わりの文（読み上げ用）と、画像の下の見出しに使う
+[["まとめ"]]
+"画像" = "007_summary_01.png"
+"題" = "AIで練習すると、試験の点は伸びるのか"
+
+[["まとめ"]]
+"画像" = "007_summary_02.png"
+"題" = "スマホは、子どもから何を奪うのか"
+
+[["まとめ"]]
+"画像" = "007_summary_03.png"
+"題" = "AIは、できる人とできない人の差を縮めるのか"
+
+[["まとめ"]]
+"画像" = "007_summary_04.png"
+"題" = "よく設計されたAIは、学びを伸ばすのか"
+
+[["まとめ"]]
+"画像" = "007_summary_05.png"
+"題" = "差を決めているのは、誰か"
+
+[["まとめ"]]
+"画像" = "007_summary_06.png"
+"題" = "結論：AIの使い方を本人任せにすると、子どもの差は広がる"
+
+[["出典"]]
+"時刻" = "0:00"
+"題" = "Generative AI without guardrails can harm learning: Evidence from high school mathematics"
+"著者" = "Bastani et al., 2025"
+"url" = "https://doi.org/10.1073/pnas.2422633122"
+"一言" = "答えを渡すAIで練習した生徒は、練習の点が48%上がり、AIを外した試験では17%下がった"
+
+[["出典"]]
+"時刻" = "1:34"
+"題" = "スマホが学力を破壊する"
+"著者" = "川島隆太, 2018（集英社新書）"
+"一言" = "スマホを長く使う子ほど成績が低い、という本"
+
+[["出典"]]
+"時刻" = "1:34"
+"題" = "仙台市の子どもの学力とスマホの関係"
+"著者" = "仙台市教育委員会・東北大学加齢医学研究所, 2016"
+"url" = "https://www.city.sendai.jp/manabi/kurashi/manabu/kyoiku/inkai/kanren/kyoiku/documents/h27sumaho.pdf"
+"一言" = "2時間勉強しても、スマホを4時間使う子は、ほとんど勉強しない子より点が低かった"
+
+[["出典"]]
+"時刻" = "3:24"
+"題" = "The Anxious Generation"
+"著者" = "Haidt, 2024（Penguin Press）"
+"一言" = "スマホとSNSが子どもの注意を細切れにしている、という世界的なベストセラー"
+
+[["出典"]]
+"時刻" = "3:24"
+"題" = "Brain Drain: The Mere Presence of One's Own Smartphone Reduces Available Cognitive Capacity"
+"著者" = "Ward et al., 2017"
+"url" = "https://doi.org/10.1086/691462"
+"一言" = "スマホが机の上にあるだけで、課題の成績が下がった"
+
+[["出典"]]
+"時刻" = "3:24"
+"題" = "Reexamining the \"brain drain\" effect: A replication of Ward et al. (2017)"
+"著者" = "Ruiz Pardo & Minda, 2022"
+"url" = "https://doi.org/10.1016/j.actpsy.2022.103717"
+"一言" = "同じ手順でやり直すと、置き場所による差は出なかった"
+
+[["出典"]]
+"時刻" = "3:24"
+"題" = "Does the Mere Presence of a Smartphone Impact Cognitive Performance? A Meta-Analysis of the \"Brain Drain Effect\""
+"著者" = "Parry, 2024"
+"url" = "https://doi.org/10.1080/15213269.2023.2286647"
+"一言" = "56本の研究をまとめると、影響は作業記憶にだけ小さく残った"
+
+[["出典"]]
+"時刻" = "5:52"
+"題" = "Ill Communication: Technology, distraction & student performance"
+"著者" = "Beland & Murphy, 2016"
+"url" = "https://doi.org/10.1016/j.labeco.2016.04.004"
+"一言" = "学校でスマホを禁止すると、上がったのはもともと成績の低い生徒だった"
+
+[["出典"]]
+"時刻" = "5:52"
+"題" = "The Impact of Cellphone Bans in Schools on Student Outcomes: Evidence from Florida"
+"著者" = "Figlio & Özek, 2025（NBER Working Paper No. 34388）"
+"url" = "https://doi.org/10.3386/w34388"
+"一言" = "米国の大きな研究では、禁止しても成績はほとんど変わらなかった"
+
+[["出典"]]
+"時刻" = "9:28"
+"題" = "Generative AI at Work"
+"著者" = "Brynjolfsson, Li & Raymond, 2025"
+"url" = "https://doi.org/10.1093/qje/qjae044"
+"一言" = "コールセンターで、AIは経験の浅い担当者の生産性を34%上げた"
+
+[["出典"]]
+"時刻" = "9:28"
+"題" = "Experimental evidence on the productivity effects of generative artificial intelligence"
+"著者" = "Noy & Zhang, 2023"
+"url" = "https://doi.org/10.1126/science.adh2586"
+"一言" = "文章を書く仕事で、もともと書く力が弱い人ほど伸び、差が縮んだ"
+
+[["出典"]]
+"時刻" = "10:52"
+"題" = "AI Meets the Classroom: When Do Large Language Models Harm Learning?"
+"著者" = "Lehmann, Cornelius & Sting, 2024（査読前）"
+"url" = "https://doi.org/10.48550/arXiv.2409.09047"
+"一言" = "大学院の授業で、AIは知識の多い学生と少ない学生の差を広げた"
+
+[["出典"]]
+"時刻" = "13:20"
+"題" = "AI tutoring outperforms in-class active learning"
+"著者" = "Kestin et al., 2025"
+"url" = "https://doi.org/10.1038/s41598-025-97652-6"
+"一言" = "作り込んだAI家庭教師で、教室の授業の2倍以上学べた"
+
+[["出典"]]
+"時刻" = "13:20"
+"題" = "From Chalkboards to Chatbots: Evaluating the Impact of Generative AI on Learning Outcomes in Nigeria"
+"著者" = "De Simone et al., 2025（World Bank）"
+"url" = "https://doi.org/10.1596/1813-9450-11125"
+"一言" = "先生と一緒に使ったAIで、6週間で1.5〜2年分の英語の伸び（著者の試算）"
+
+[["出典"]]
+"時刻" = "17:20"
+"題" = "The nature of nurture: Effects of parental genotypes"
+"著者" = "Kong et al., 2018"
+"url" = "https://doi.org/10.1126/science.aan6877"
+"一言" = "親が子に渡さなかった遺伝子でさえ、家庭を通して子の学歴を予測した"
+
+[["出典"]]
+"時刻" = "17:20"
+"題" = "Family environment and the malleability of cognitive ability"
+"著者" = "Kendler et al., 2015"
+"url" = "https://doi.org/10.1073/pnas.1417106112"
+"一言" = "養子に出た兄弟のほうが、IQが平均4.4点高かった"
