@@ -16,7 +16,8 @@ import budoux
 
 ここ = Path(__file__).parent
 出力 = ここ / "_site"
-動画に必須 = ["番号", "題", "流れ"]
+# まとめ画像も必須（動画ページには、その動画の内容のまとめ画像を必ず置く: 2026-10-06 本人）。忘れると組み立てが止まる
+動画に必須 = ["番号", "題", "流れ", "まとめ"]
 
 FONTS = ("https://fonts.googleapis.com/css2?family=LINE+Seed+JP:wght@400;800"
          "&family=Shippori+Mincho+B1:wght@800&family=Montserrat:ital,wght@1,800&display=swap")
