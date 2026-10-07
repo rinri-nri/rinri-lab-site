@@ -306,6 +306,14 @@ td.ts { white-space: nowrap; width: 1%; font-size: 15px; }
 .refs li:first-child { border: 0; }
 .back { padding-bottom: var(--s4); }
 
+/* --- この動画ができるまで: 左に出てきた疑問の数を大きく、右に新しく勉強したことを札で並べる --- */
+.making { display: flex; flex-wrap: wrap; gap: var(--s3); align-items: center; padding: var(--s3); }
+.making-count { display: flex; align-items: baseline; gap: var(--s1); font-weight: 800; }
+.making-num { font-size: clamp(48px, 8vw, 88px); line-height: 1; }
+.making-learned { flex: 1; min-width: 240px; font-weight: 800; }
+.making-learned ul { display: flex; flex-wrap: wrap; gap: var(--s1) var(--s2); margin-top: var(--s1); padding: 0; }
+.making-learned li { list-style: none; font-weight: 400; }
+
 /* --- 足元: 大きな字が流れる帯 --- */
 footer { margin-top: var(--s4); background: var(--strong); color: var(--on-strong); border-top: var(--line) solid var(--ink); padding-bottom: var(--s2); }
 .footband { overflow: hidden; padding: var(--s2) 0 var(--s1); }

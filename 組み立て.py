@@ -260,6 +260,15 @@ def まとめの送り(まとめ):
 <button class="btn next" type="button" aria-label="次のまとめ画像">→</button></div></div>"""
 
 
+def できるまで(v):
+    """この動画ができるまで: 調べる中で出てきた疑問の数と、新しく勉強したこと（概要欄と同じ欄。2026-10-07 本人）。"""
+    数 = f"""<div class="making-count"><span class="making-num en">{int(v["疑問の数"])}</span><span>調べる中で出てきた疑問</span></div>""" \
+        if v.get("疑問の数") else ""
+    学び = "".join(f'<li class="fuda">{escape(語)}</li>' for 語 in v.get("勉強したこと", []))
+    学び = f'<div class="making-learned"><span>新しく勉強したこと</span><ul>{学び}</ul></div>' if 学び else ""
+    return f'<div class="box making reveal">{数}{学び}</div>'
+
+
 def 動画ページ(サイト, v):
     中身 = f"""<header class="hero vhero">
 {大きな英字(f"no.{ページ番号(v)}")}
@@ -274,6 +283,10 @@ def 動画ページ(サイト, v):
 <section class="sec">{大きな英字("route.", "secword", "data-drift")}<div class="wrap">
 {見出し("ここにたどり着くまで", "THE ROUTE OF QUESTIONS")}
 {疑問の鎖(v)}</div></section>"""
+    if v.get("疑問の数") or v.get("勉強したこと"):
+        中身 += f"""<section class="sec"><div class="wrap">
+{見出し("この動画ができるまで", "BEHIND THE VIDEO")}
+{できるまで(v)}</div></section>"""
     if v.get("まとめ"):
         中身 += f"""<section class="sec">{大きな英字("summary.", "secword", "data-drift")}<div class="wrap">
 {見出し("まとめ", "SUMMARY")}
