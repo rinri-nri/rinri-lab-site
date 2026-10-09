@@ -229,6 +229,14 @@ def 資料(r):
     return 中
 
 
+def 公開日(v):
+    """動画の公開日（"公開日" = "2026-10-24"）。予約投稿のうちにページを出すとき、YouTube のボタンの先がまだ見られないことが分かるように（2026-10-09 本人）。"""
+    if not v.get("公開日"):
+        return ""
+    年, 月, 日 = (int(x) for x in str(v["公開日"]).split("-"))
+    return f'<span class="end-date">{年}年{月}月{日}日 公開</span>'
+
+
 def 疑問の鎖(v):
     段たち = "".join(
         f"""<div class="node {'l' if i % 2 else 'r'} reveal"><span class="node-no en">Q{i}</span>
@@ -237,6 +245,7 @@ def 疑問の鎖(v):
         for i, 段 in enumerate(v["流れ"], 1))
     終わりの中 = f"""<div class="end-thumb">{サムネ(v, "../")}</div><div class="end-text">
 <span class="en">AND THEN — IT BECAME A VIDEO</span><b class="phrase">{文節(v['題'])}</b>
+{公開日(v)}
 {'<span class="btn main">YouTube で見る ↗</span>' if v.get("youtube") else ""}</div>"""
     if v.get("youtube"):
         終わり = f'<a class="box end-card" href="{escape(v["youtube"])}">{終わりの中}</a>'

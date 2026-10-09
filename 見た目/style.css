@@ -271,6 +271,7 @@ a.end-card:hover { translate: -4px -4px; box-shadow: 11px 11px 0 var(--strong-sh
 .end-text .en { font-size: 12px; }
 .end-text b { font-size: clamp(20px, 2.6vw, 28px); line-height: 1.4; }
 .end-text .btn.main { align-self: flex-start; background: var(--paper); color: var(--ink); box-shadow: 4px 4px 0 var(--bg); }
+.end-text .end-date { font-size: 14px; font-weight: 700; opacity: .85; }
 
 /* --- 動画ページ: まとめ画像（横に並べて1枚ずつ送る） --- */
 .slides { display: grid; grid-auto-flow: column; grid-auto-columns: 100%; gap: var(--s3); overflow-x: auto; position: relative;
