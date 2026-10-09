@@ -259,7 +259,8 @@ img { max-width: 100%; display: block; }
 .node.r .node-no { left: -76px; }
 .node-q { font-size: clamp(19px, 2.2vw, 24px); line-height: 1.5; padding: 6px 14px; margin-bottom: 14px; }
 .node.r .node-q { rotate: 1.5deg; }
-.node-a { padding: 16px 18px; font-size: 15px; }
+/* 分かったことも見出しと同じ ExtraBold（細い Regular だと、ほかと違う書体に見えた: 2026-10-10 本人） */
+.node-a { padding: 16px 18px; font-size: 15px; font-weight: 800; }
 .node-a p + p { margin-top: var(--s1); }
 .node-end { width: 100%; margin: 0; padding-top: var(--s3); }
 .node-end .node-no { left: 50%; right: auto; translate: -50% 0; top: -28px; background: var(--strong); color: var(--on-strong); }
@@ -313,7 +314,8 @@ td.ts { white-space: nowrap; width: 1%; font-size: 15px; }
 .making-num { font-size: clamp(48px, 8vw, 88px); line-height: 1; }
 .making-learned { flex: 1; min-width: 240px; font-weight: 800; }
 .making-learned ul { display: flex; flex-wrap: wrap; gap: var(--s1) var(--s2); margin-top: var(--s1); padding: 0; }
-.making-learned li { list-style: none; font-weight: 400; }
+/* 札も見出しと同じ ExtraBold。太くすると小さい札では窮屈なので、字と余白を一回り大きくする（本人） */
+.making-learned li { list-style: none; font-weight: 800; font-size: 18px; padding: 2px .55em; }
 
 /* --- 足元: 大きな字が流れる帯 --- */
 footer { margin-top: var(--s4); background: var(--strong); color: var(--on-strong); border-top: var(--line) solid var(--ink); padding-bottom: var(--s2); }
