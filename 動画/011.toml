@@ -1,0 +1,201 @@
+# メインの動画1本ぶん。書き方は 使い方.md
+# 下書き（Claude が台本・概要欄・探究のメモから作った。2026-10-11）。流れの文は本人が直す
+# 出典の時刻は、その資料が出る章の始まり（VideoProject の 完成/YouTubeチャプター.txt）
+
+"番号" = 11
+"題" = "フィンランド教育は、なぜ崩壊したのか"
+"youtube" = "https://youtu.be/m6bDEPCug1A"
+"サムネ" = "011.jpg"      # 画像/ に置く。無ければ縞模様になる
+# この動画ができるまで（概要欄と同じ欄）。疑問の数は 探究/フィンランド教育はなぜ崩れたのか/メモ.md の章の数。
+# 勉強したことは Claude の下書き（本人が直す）
+"疑問の数" = 44
+"勉強したこと" = ["発見学習のメタ分析", "標準化係数", "PISAの基礎の水準", "流し読みの増加"]
+
+# ここにたどり着くまでの疑問の道すじ。上から順に、線でつないだ札になる。
+# 最初の 疑問 が、この動画のきっかけ（トップのカードにも出る）
+[["流れ"]]
+"疑問" = "世界一だったフィンランドは、どのくらい下がったの？"
+"分かったこと" = "2006年の547点を頂点に、読解・数学・科学の3分野とも下がり続けていた。2025年の読解は474点だった。"
+
+[["流れ"]]
+"疑問" = "「子どもに自由を与えすぎた」のが原因なの？"
+"分かったこと" = "手助けなしで子どもに発見させる授業は、成績を下げるという研究があった。ただ、子ども主導の方向は1994年の教育課程から始まっていて、最高点を取った2006年の15歳も、その課程で学んでいた。"
+
+[["流れ"]]
+"疑問" = "下がる前に、ほかに何が起きていたの？"
+"分かったこと" = "読書離れが先に始まっていた。毎日楽しみで本を読む15歳は、2000年の約78%から2009年には約68%に減っていた。"
+
+[["流れ"]]
+"疑問" = "2018年から急に落ちたのは、なぜ？"
+"分かったこと" = "世界全体も2012年ごろから下がっていた。10代のスマホの普及と、流し読みへの読み方の変化が最有力の説だった。"
+
+[["流れ"]]
+"疑問" = "2025年は、誰が落ちたの？"
+"分かったこと" = "一番落ちたのは、裕福な家庭の子だった（OECD全体の読解で−20点）。理由は、OECDも「分からない」と言っている。原因は1つではなく、時期によって効いた原因が違った。ここまでを1本にまとめた。"
+
+# まとめ画像（話の区切りごとの説明画像）。上から順に、左右に送って見る形で並ぶ。
+# 画像は VideoProject の 探究/フィンランド教育はなぜ崩れたのか/まとめ_01〜05.png をコピーしたもの（作り直したら、ここにもコピーし直す）。
+# 題は画像の代わりの文（読み上げ用）と、画像の下の見出しに使う
+[["まとめ"]]
+"画像" = "011_summary_01.png"
+"題" = "世界一だったフィンランドは、どれだけ落ちたのか"
+
+[["まとめ"]]
+"画像" = "011_summary_02.png"
+"題" = "フィンランドの学力は、なぜ落ちたのか"
+
+[["まとめ"]]
+"画像" = "011_summary_03.png"
+"題" = "子ども主導の授業は、成績を下げるのか"
+
+[["まとめ"]]
+"画像" = "011_summary_04.png"
+"題" = "PISA 2025、一番落ちたのは誰か"
+
+[["まとめ"]]
+"画像" = "011_summary_05.png"
+"題" = "フィンランド教育は、なぜ崩壊したのか"
+
+[["出典"]]
+"時刻" = "0:00"
+"題" = "Finnish good PISA results have brought thousands of educationalists to Finland"
+"著者" = "フィンランド教育庁, 2020"
+"url" = "https://www.oph.fi/en/news/2020/finnish-good-pisa-results-have-brought-thousands-educationalists-finland"
+"一言" = "世界中から、フィンランドの教育の視察が来た"
+
+[["出典"]]
+"時刻" = "1:45"
+"題" = "言語活動の充実に関する基本的な考え方"
+"著者" = "文部科学省（2008年の学習指導要領改訂）"
+"url" = "https://www.mext.go.jp/a_menu/shotou/new-cs/gengo/1306118.htm"
+"一言" = "日本は2008年、授業時間を増やす方向へ進んだ"
+
+[["出典"]]
+"時刻" = "1:45"
+"題" = "02章で紹介した本の題名"
+"著者" = "各出版社・書店のページ"
+"一言" = "当時、フィンランドの教育を紹介する本が続いた"
+
+[["出典"]]
+"時刻" = "3:11"
+"題" = "PISA 2025 Results (Volume I)"
+"著者" = "OECD, 2026"
+"url" = "https://www.oecd.org/content/dam/oecd/en/publications/reports/2026/09/pisa-2025-results-volume-i_5265bfb1/73451bc5-en.pdf"
+"一言" = "2025年の点数と、裕福な家庭の子の下落、流し読みの増加"
+
+[["出典"]]
+"時刻" = "3:11"
+"題" = "PISA 2025 Results: Country Notes — Finland"
+"著者" = "OECD, 2026"
+"url" = "https://www.oecd.org/en/publications/pisa-2025-results-volume-i-country-notes_2d4ff9ea-en/finland_d436670f-en.html"
+"一言" = "フィンランドの2025年の点数"
+
+[["出典"]]
+"時刻" = "3:11"
+"題" = "PISA 2022 Results: Country Notes — Finland"
+"著者" = "OECD, 2023"
+"url" = "https://www.oecd.org/en/publications/pisa-2022-results-volume-i-and-ii-country-notes_ed6fbcc5-en/finland_6991e849-en.html"
+"一言" = "2018→2022 の急落と、基礎の水準に届かない生徒の割合"
+
+[["出典"]]
+"時刻" = "3:11"
+"題" = "PISA 2018: Finland has top readers"
+"著者" = "フィンランド教育文化省, 2019"
+"url" = "https://okm.fi/en/-/pisa-2018-finland-has-top-readers"
+"一言" = "2018年の点数と、読解の男女差"
+
+[["出典"]]
+"時刻" = "3:11"
+"題" = "PISA 2018 Country Note — Finland"
+"著者" = "OECD, 2019"
+"url" = "https://www.oecd.org/content/dam/oecd/en/about/programmes/edu/pisa/publications/national-reports/pisa-2018/featured-country-specific-overviews/PISA2018_CN_FIN.pdf"
+"一言" = "2018年までの点数の推移"
+
+[["出典"]]
+"時刻" = "4:42"
+"題" = "Does discovery-based instruction enhance learning?"
+"著者" = "Alfieri, Brooks, Aldrich & Tenenbaum, 2011"
+"url" = "https://doi.org/10.1037/a0021017"
+"一言" = "164の研究のメタ分析。手助けなしで発見させる授業は、効果が −0.38"
+
+[["出典"]]
+"時刻" = "4:42"
+"題" = "The Science of Teaching Science"
+"著者" = "OECD, 2018"
+"url" = "https://www.oecd.org/content/dam/oecd/en/publications/reports/2018/11/the-science-of-teaching-science_b00c65f8/f5bd9e57-en.pdf"
+"一言" = "PISA 2015 で、探究型の授業が多いほど点が低かった"
+
+[["出典"]]
+"時刻" = "4:42"
+"題" = "Equality in Cognitive Learning Outcomes: The Roles of Educational Practices"
+"著者" = "Saarinen, 2020（ヘルシンキ大学の博士論文）"
+"url" = "https://helda.helsinki.fi/handle/10138/320436"
+"一言" = "フィンランド国内でも、生徒主導の授業が多い生徒ほど点が低かった"
+
+[["出典"]]
+"時刻" = "7:58"
+"題" = "Do students today read for pleasure?"
+"著者" = "OECD, PISA in Focus No. 8, 2011"
+"url" = "https://doi.org/10.1787/5k9h362lhw32-en"
+"一言" = "楽しみで本を読む生徒の割合が、成績より先に下がっていた"
+
+[["出典"]]
+"時刻" = "9:00"
+"題" = "PISA2025のポイント"
+"著者" = "文部科学省・国立教育政策研究所, 2026"
+"url" = "https://www.nier.go.jp/05_kenkyu_seika/pisa/pdf/2025/01_point.pdf"
+"一言" = "日本は2025年も503点で、OECD加盟国の1位"
+
+[["出典"]]
+"時刻" = "9:00"
+"題" = "Device ownership by teens over time"
+"著者" = "Pew Research Center"
+"url" = "https://www.pewresearch.org/chart/device-ownership-by-teens-over-time/"
+"一言" = "10代がスマホを持つようになった時期"
+
+[["出典"]]
+"時刻" = "9:00"
+"題" = "令和5年度 青少年のインターネット利用環境実態調査"
+"著者" = "こども家庭庁, 2024"
+"url" = "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/9a55b57d-cd9d-4cf6-8ed4-3da8efa12d63/98ae45a9/20240329_policies_youth-kankyou_internet_research_results-etc_10.pdf"
+"一言" = "日本の子どものスマホの利用"
+
+[["出典"]]
+"時刻" = "10:53"
+"題" = "Performance of immigrant students in PISA 2022"
+"著者" = "フィンランド政府, 2023"
+"url" = "https://valtioneuvosto.fi/en/-/1410845/performance-of-immigrant-students-in-pisa-2022"
+"一言" = "移民の生徒の増加だけでは、下落を説明できない"
+
+[["出典"]]
+"時刻" = "12:18"
+"題" = "PISA 2025: Students in Finland still perform well above OECD average in science"
+"著者" = "フィンランド政府, 2026"
+"url" = "https://valtioneuvosto.fi/en/-/1410845/pisa-2025-students-in-finland-still-perform-well-above-oecd-average-in-science"
+"一言" = "フィンランドでも、科学で下がったのは最も恵まれた層だけだった"
+
+[["出典"]]
+"時刻" = "12:18"
+"題" = "Does the digital world open up an increasing divide in access to print books?"
+"著者" = "OECD, PISA in Focus, 2022"
+"url" = "https://www.oecd.org/content/dam/oecd/en/publications/reports/2022/07/does-the-digital-world-open-up-an-increasing-divide-in-access-to-print-books_616c4c09/54f9d8f7-en.pdf"
+"一言" = "家にある紙の本の数の変化"
+
+[["出典"]]
+"時刻" = "12:18"
+"題" = "Fewer books and more educational software?"
+"著者" = "OECD, PISA in Focus, 2024"
+"url" = "https://www.oecd.org/content/dam/oecd/en/publications/reports/2024/09/fewer-books-and-more-educational-software_c0e60164/0e179a87-en.pdf"
+"一言" = "家の本が減ったのは、主に下の層だった"
+
+[["出典"]]
+"時刻" = "14:01"
+"題" = "教育予算の削減の指摘"
+"著者" = "Helsinki Times「Finland's PISA results continue to decline, sparking concern」、Fordham Institute「The rise and fall of Finland-mania, part two」"
+"一言" = "2012〜2019年の教育予算の削減が、下落を加速させたという指摘"
+
+[["出典"]]
+"時刻" = "14:01"
+"題" = "Finnish law bans use of mobile devices during school lessons"
+"著者" = "Telecompaper"
+"一言" = "2025年8月から、授業中のスマホの使用が禁止された"
