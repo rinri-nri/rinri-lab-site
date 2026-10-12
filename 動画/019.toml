@@ -1,0 +1,232 @@
+# 動画019。台本・概要欄・台本準拠のまとめ15〜22から作成。
+"番号" = 19
+"題" = "低身長の男性は、どこまで不利なのか"
+"youtube" = "https://youtu.be/iSGL6bremSM"
+"公開日" = "2026-10-31"
+"サムネ" = "019.png"
+"疑問の数" = 21
+"勉強したこと" = ["交絡", "媒介分析", "認知・非認知能力", "無知のヴェール"]
+
+[["流れ"]]
+"疑問" = "「低身長には人権がない」は、どこまで本当なのか？"
+"分かったこと" = "収入・扱い・恋愛の3つに分けて研究を調べた。平均的な差、差が生まれる原因、個人への評価を区別して考える。"
+
+[["流れ"]]
+"疑問" = "身長が1cm違うと、賃金も変わる？"
+"分かったこと" = "2023年の統合分析では、年齢などを考慮した推定は約1.06％、認知か教育も考慮した推定は約0.57％の関連だった。異なる研究群の比較であり、背を伸ばせばその割合で昇給するという結果ではない。"
+
+[["流れ"]]
+"疑問" = "身長と経験と能力は、どうつながる？"
+"分かったこと" = "思春期の身長・学校活動・成人賃金の関連を調べた研究がある。経験を通じる経路は候補だが、一連の因果は確定していない。栄養などの成長環境が、身長と発達の両方に関わる説明もある。"
+
+[["流れ"]]
+"疑問" = "背の高さで、周囲の扱いは変わる？"
+"分かったこと" = "身長を変えた画像でリーダーらしさの評価が変わる実験や、低身長群のいじめ被害申告が多い学校調査がある。ただし、印象、被害、同じ発言への賛同はそれぞれ違う結果である。"
+
+[["流れ"]]
+"疑問" = "男性の身長で、魅力の評価は変わる？"
+"分かったこと" = "男性CGの身長を変えると、女性による魅力評価が変わる実験がある。画像の評価、短い対面での選択、実際の交際・結婚は分けて読む必要がある。"
+
+[["流れ"]]
+"疑問" = "好みを持つことと、相手を見下すことは同じか？"
+"分かったこと" = "好きになる相手は人によって違う。好みに合わない相手へどう接するかは、別の問いとして考えられる。発言の背景や謝罪の経緯も確認した。"
+
+[["流れ"]]
+"疑問" = "自分の身長が分からなくても、その社会を選ぶか？"
+"分かったこと" = "無知のヴェールは、自分の立場を知らずに社会の原則を選ぶ思考実験。不利を示す研究結果があっても、それは人への尊重を省いてよい根拠にはならない。"
+
+[["まとめ"]]
+"画像" = "019_summary_01.png"
+"題" = "低身長の男性は、どこまで不利なのか"
+
+[["まとめ"]]
+"画像" = "019_summary_02.png"
+"題" = "身長と賃金には、どんな差があるのか"
+
+[["まとめ"]]
+"画像" = "019_summary_03.png"
+"題" = "社会経験が、身長と賃金をつなぐのか"
+
+[["まとめ"]]
+"画像" = "019_summary_04.png"
+"題" = "学校での扱いは、何から何まで悪くなるのか"
+
+[["まとめ"]]
+"画像" = "019_summary_05.png"
+"題" = "身長で、男性の魅力の評価は変わるのか"
+
+[["まとめ"]]
+"画像" = "019_summary_06.png"
+"題" = "好みを持つことと、相手を見下すことは同じか"
+
+[["まとめ"]]
+"画像" = "019_summary_07.png"
+"題" = "自分の立場が分からなくても、そのルールを選ぶか"
+
+[["まとめ"]]
+"画像" = "019_summary_08.png"
+"題" = "低身長の男性は、どこまで不利なのか"
+
+[["出典"]]
+"時刻" = "1:21"
+"題" = "The height premium: A systematic review and meta-analysis"
+"著者" = "Thompson et al. (2023)"
+"url" = "https://doi.org/10.1016/j.ehb.2023.101273"
+"一言" = "身長と賃金の関連の大きさは、地域・性別・研究によって異なる。"
+
+[["出典"]]
+"時刻" = "1:21"
+"題" = "The height premium: a literature review and meta-analysis"
+"著者" = "Puett et al. (2023)"
+"url" = "https://gatesopenresearch.org/articles/7-125"
+"一言" = "教育・認知を調整した研究では、身長と賃金の関連が小さかった。"
+
+[["出典"]]
+"時刻" = "5:57"
+"題" = "The Effect of Adolescent Experience on Labor Market Outcomes: The Case of Height"
+"著者" = "Persico et al. (2004)"
+"url" = "https://www.nber.org/papers/w10522"
+"一言" = "思春期の身長と賃金の関連は、学校活動を考慮すると一部弱まった。"
+
+[["出典"]]
+"時刻" = "5:57"
+"題" = "Stature and Status: Height, Ability, and Labor Market Outcomes"
+"著者" = "Case & Paxson (2006/2008)"
+"url" = "https://www.nber.org/papers/w12466"
+"一言" = "子どもの認知検査成績を考慮すると、身長と賃金の関連が弱まる。"
+
+[["出典"]]
+"時刻" = "1:21"
+"題" = "身長と体重が賃金に及ぼす影響"
+"著者" = "田中賢久 (2010)"
+"url" = "https://www.pdrc.keio.ac.jp/uploads/DP2009-010new.pdf"
+"一言" = "日本の男性の低身長と賃金の関連は、モデルによって有意性が変わった。"
+
+[["出典"]]
+"時刻" = "5:57"
+"題" = "Height, Human Capital, and Earnings: The Contributions of Cognitive and Noncognitive Ability"
+"著者" = "Schick & Steckel (2015)"
+"url" = "https://doi.org/10.1086/679675"
+"一言" = "身長と検査・行動指標には平均的な関連があり、調整すると賃金との関連が弱まる。"
+
+[["出典"]]
+"時刻" = "5:57"
+"題" = "The Growing Importance of Social Skills in the Labor Market"
+"著者" = "Deming (2017)"
+"url" = "https://www.nber.org/papers/w21473"
+"一言" = "社会スキル指標と賃金の関連は、米国の新しい世代で強まった。"
+
+[["出典"]]
+"時刻" = "5:57"
+"題" = "Returns to On-the-Job Soft Skills Training"
+"著者" = "Adhvaryu et al. (2023)"
+"url" = "https://doi.org/10.1086/724320"
+"一言" = "研修は生産性を改善したが、掲載要旨では賃金への効果を検出しなかった。"
+
+[["出典"]]
+"時刻" = "14:01"
+"題" = "The Height Leadership Advantage in Men and Women"
+"著者" = "Blaker et al. (2013)"
+"url" = "https://research.vu.nl/ws/portalfiles/portal/1528680/chapter%2B2%2B-%2BThe%2BHeight%2BLeadership%2Badvantage%2Bin%2Bmen%2Band%2Bwomen.pdf"
+"一言" = "高身長情報を与えられた男性は、よりリーダーらしく評価された。"
+
+[["出典"]]
+"時刻" = "5:57"
+"題" = "Nutritional Supplementation in Early Childhood, Schooling, and Intellectual Functioning in Adulthood"
+"著者" = "Stein et al. (2008)"
+"url" = "https://pmc.ncbi.nlm.nih.gov/articles/PMC3733080/"
+"一言" = "幼少期の栄養介入と、成人の図形推理成績の改善が結びついた。"
+
+[["出典"]]
+"時刻" = "5:57"
+"題" = "Effect of a Nutrition Intervention During Early Childhood on Economic Productivity in Guatemalan Adults"
+"著者" = "Hoddinott et al. (2008)"
+"url" = "https://doi.org/10.1016/S0140-6736(08)60205-6"
+"一言" = "幼少期栄養介入と男性時給に差があったが、年収増は明確でなかった。"
+
+[["出典"]]
+"時刻" = "14:01"
+"題" = "The Effects of Body Characteristics on Perceived Competence"
+"著者" = "Kneip (2011)"
+"url" = "https://scholar.utc.edu/theses/42/"
+"一言" = "同じ音声で外見を比較したが、低身長男性の発言軽視の確証には使えない。"
+
+[["出典"]]
+"時刻" = "14:01"
+"題" = "The Effects of Expertise and Physical Attractiveness upon Opinion Agreement and Liking"
+"著者" = "Horai et al. (1974)"
+"url" = "https://www.jstor.org/stable/2786431"
+"一言" = "容姿・専門性によって意見への賛同が変わったとする実験。"
+
+[["出典"]]
+"時刻" = "14:01"
+"題" = "Effects of Source Expertness, Physical Attractiveness, and Supporting Arguments on Persuasion"
+"著者" = "Maddux & Rogers (1980)"
+"url" = "https://www.researchgate.net/publication/232552027"
+"一言" = "専門性と論拠は賛同を高めたが、容姿の効果は検出しなかった。"
+
+[["出典"]]
+"時刻" = "14:01"
+"題" = "Inequality and Social Influence: Monetary Hierarchies Shape Persuasive Power"
+"著者" = "Martinangeli & Meiske (2025)"
+"url" = "https://biljanameiske.com/wp-content/uploads/2025/03/Inequality-and-Social-Influence-Monetary-Hierarchies-Shape-Persuasive-Power.pdf"
+"一言" = "偶然与えられた金銭順位でも、助言への影響が変わったとする公開稿。"
+
+[["出典"]]
+"時刻" = "14:01"
+"題" = "Bullying in School: Are Short Pupils at Risk?"
+"著者" = "Voss & Mulligan (2000)"
+"url" = "https://www.bmj.com/content/320/7235/612"
+"一言" = "英国の低身長群では、いじめの本人報告が多かった。"
+
+[["出典"]]
+"時刻" = "14:01"
+"題" = "Short Stature in a Population-based Cohort: Social, Emotional, and Behavioral Functioning"
+"著者" = "Lee et al. (2009)"
+"url" = "https://pubmed.ncbi.nlm.nih.gov/19706592/"
+"一言" = "多くの指標に差はなく、被害指標は切り方で有意性が変わった。"
+
+[["出典"]]
+"時刻" = "20:02"
+"題" = "The Height of Choosiness"
+"著者" = "Stulp et al. (2013)"
+"url" = "https://www.gertstulp.com/pdf/Stulp%20et%20al%202013_Anim%20Behav_The%20height%20of%20choosiness.pdf"
+"一言" = "短い対面の出会いで、高身長男性は選ばれやすく相互マッチも多かった。"
+
+[["出典"]]
+"時刻" = "20:02"
+"題" = "Are Human Mating Preferences with Respect to Height Reflected in Actual Pairings?"
+"著者" = "Stulp et al. (2013)"
+"url" = "https://doi.org/10.1371/journal.pone.0054186"
+"一言" = "男性が高い組の多さには、男女の身長分布そのものも寄与する。"
+
+[["出典"]]
+"時刻" = "20:02"
+"題" = "Examining Ecological Harshness, Sociosexuality, and Mate Value in Women’s Preferences for Men’s Height and Shoulder-to-Hip Ratio"
+"著者" = "Garza et al. (2024)"
+"url" = "https://doi.org/10.1007/s40806-024-00394-3"
+"一言" = "CG男性の身長で魅力評価が変わったが、172cm女性との相対差を分離していない。"
+
+[["出典"]]
+"時刻" = "20:02"
+"題" = "Experimental Evidence That Penis Size, Height, and Body Shape Influence Assessment of Male Sexual Attractiveness and Fighting Ability in Humans"
+"著者" = "Aich et al. (2026)"
+"url" = "https://doi.org/10.1371/journal.pbio.3003595"
+"一言" = "独立に操作したCGの身長が、女性の性的魅力評価を変えた。"
+
+[["参考"]]
+"題" = "当時の発言・撤回・謝罪の報道"
+"url" = "https://getnews.jp/archives/3222017"
+
+[["参考"]]
+"題" = "本人の2021年インタビュー"
+"url" = "https://sportiva.shueisha.co.jp/clm/othersports/e_sports/2021/06/24/post_8/"
+
+[["参考"]]
+"題" = "ゲーム用語の解説"
+"url" = "https://gamer2.jp/post/jinken_humanright/"
+
+[["参考"]]
+"題" = "Original Position（原初状態と無知のヴェール）"
+"著者" = "Stanford Encyclopedia of Philosophy"
+"url" = "https://plato.stanford.edu/entries/original-position/"
