@@ -1,0 +1,211 @@
+# 動画021。台本・概要欄・まとめ_01〜08から作成。出典の時刻は完成/YouTubeチャプター.txt の章の頭。
+"番号" = 21
+"題" = "1人で国家予算超え。なぜ世界の富はここまで偏るのか"
+"サムネ" = "021.png"
+"疑問の数" = 17
+"勉強したこと" = ["純資産（借金を引いた資産）", "資産の分布の分位", "親子の資産の順位の相関", "所得の弾力性", "富裕税"]
+
+[["流れ"]]
+"疑問" = "イーロン・マスク1人の資産は、貧しい人何人分なのか？"
+"分かったこと" = "資産は約9,085億ドル（約144兆円）で、日本の国の1年分の予算より多い。世界でいちばん貧しい人から足していくと約38億人。ただし、その大半は借金の穴を埋める分で、借金を除いて数え直すと約15.5億人。上位10人なら約25億人になる。"
+
+[["流れ"]]
+"疑問" = "日本人は、世界の富のどこにいるのか？"
+"分かったこと" = "真ん中の日本人の資産は約1,113万円で、マスク1人はその約1,290万人分（東京都の人口の約9割）。そしてその日本人は、世界の大人の上位約16%にいる。"
+
+[["流れ"]]
+"疑問" = "運だけで、富は一部の人に集まるのか？"
+"分かったこと" = "1万人が毎年コインを投げ、資産が5割増えるか5割減るだけの世界を100年続けた。全員が同じ条件でも、上位1%が富の約99%を持った。1.5倍と0.5倍を1回ずつ引くと0.75倍になる、掛け算の性質による。"
+
+[["流れ"]]
+"疑問" = "世界の格差は、広がっているのか？"
+"分かったこと" = "20世紀に一度大きく縮み、上位1%・10%の取り分は1990年代から横ばい。下半分の資産も3倍に増えた。ただし、上位0.01%の取り分だけは約2倍（6.5%→11.6%）になっていた。"
+
+[["流れ"]]
+"疑問" = "一番上の富は、入れ替わるのか？"
+"分かったこと" = "多くの家では、親子の資産の順位の相関は0.3〜0.4で、代を重ねると真ん中へ近づく。養子の研究では、生みの親より育ての親の資産が効く。ところが一番上は別で、スウェーデンの上位0.1%は親子の所得の弾力性が約0.9。フィレンツェでは、1427年に上だった名字の子孫が今も豊か。"
+
+[["流れ"]]
+"疑問" = "富は、分け直せるのか？"
+"分かったこと" = "資産10億ドル超の人に2%の最低課税をかけると、年約2,500億ドル。コインの世界に2%の税をかけると、上位1%の取り分は約53%で止まった。富裕税は OECD で12か国から4か国に減ったが、ノルウェーの増税で国を出たのは多くても約100人だった。"
+
+[["流れ"]]
+"疑問" = "なぜ世界の富は、ここまで偏るのか？"
+"分かったこと" = "富は掛け算で増え、運で偏り、いちばん上では、生まれのまま受け継がれるからである。"
+
+[["まとめ"]]
+"画像" = "021_summary_01.png"
+"題" = "イーロン・マスク1人の資産は、貧しい人何人分か"
+
+[["まとめ"]]
+"画像" = "021_summary_02.png"
+"題" = "世界の富豪10人の資産は、貧しい人何人分か"
+
+[["まとめ"]]
+"画像" = "021_summary_03.png"
+"題" = "日本人は、世界の富のどこにいるのか"
+
+[["まとめ"]]
+"画像" = "021_summary_04.png"
+"題" = "運だけで、富は一部の人に集まるのか"
+
+[["まとめ"]]
+"画像" = "021_summary_05.png"
+"題" = "世界の格差は、広がっているのか"
+
+[["まとめ"]]
+"画像" = "021_summary_06.png"
+"題" = "一番上の富は、入れ替わるのか"
+
+[["まとめ"]]
+"画像" = "021_summary_07.png"
+"題" = "富は、分け直せるのか"
+
+[["まとめ"]]
+"画像" = "021_summary_08.png"
+"題" = "1人で国家予算超え。なぜ世界の富はここまで偏るのか"
+
+[["出典"]]
+"時刻" = "0:52"
+"題" = "Real-Time Billionaires"
+"著者" = "Forbes（2026年10月17日 午後5時 米東部時間の値）"
+"url" = "https://www.forbes.com/real-time-billionaires/"
+"一言" = "マスクの資産 9,085億ドル、上位10人の合計 2兆9,624億ドル。"
+
+[["出典"]]
+"時刻" = "0:00"
+"題" = "World Inequality Database"
+"著者" = "World Inequality Lab"
+"url" = "https://wid.world/"
+"一言" = "世界・各国の大人1人あたりの純資産の分布（2024年）。人数と日本人の位置は、ここから自分で計算した。"
+
+[["出典"]]
+"時刻" = "0:52"
+"題" = "令和8年度予算のポイント（政府案）"
+"著者" = "財務省"
+"url" = "https://www.mof.go.jp/policy/budget/budger_workflow/budget/fy2026/seifuan2026/01.pdf"
+"一言" = "一般会計の総額は122兆3,092億円。"
+
+[["出典"]]
+"時刻" = "0:00"
+"題" = "令和6年分 民間給与実態統計調査"
+"著者" = "国税庁"
+"url" = "https://www.nta.go.jp/publication/statistics/kokuzeicho/minkan2024/pdf/R06_001.pdf"
+"一言" = "第16表の給与階級別の人数から按分し、年収の中央値を約413万円とした（自分の計算）。"
+
+[["出典"]]
+"時刻" = "5:12"
+"題" = "「東京都の人口（推計）」の概要（令和8年6月1日現在）"
+"著者" = "東京都"
+"url" = "https://www.metro.tokyo.lg.jp/information/press/2026/06/2026063012"
+"一言" = "東京都の人口は約1,430万人。"
+
+[["出典"]]
+"時刻" = "6:52"
+"題" = "Heterogeneity and Persistence in Returns to Wealth"
+"著者" = "Fagereng, Guiso, Malacrino & Pistaferri (2020)"
+"url" = "https://doi.org/10.3982/ECTA14835"
+"一言" = "ノルウェーの全国民の税の記録では、資産の多い人ほど、資産が増える割合が大きかった。"
+
+[["出典"]]
+"時刻" = "8:48"
+"題" = "The Evolution of Top Incomes: A Historical and International Perspective"
+"著者" = "Piketty & Saez (2006)"
+"url" = "https://www.nber.org/papers/w11955"
+"一言" = "20世紀前半の格差の縮小を、戦争と恐慌による大きな財産の損失、その後の累進課税で説明する。"
+
+[["出典"]]
+"時刻" = "8:48"
+"題" = "Richer and More Equal: A New History of Wealth in the West"
+"著者" = "Waldenström (2024)"
+"url" = "https://eces.org.eg/en/richer-and-more-equal/"
+"一言" = "格差の縮小を、中間層の家と年金が増えたことで説明する。"
+
+[["出典"]]
+"時刻" = "11:10"
+"題" = "Intergenerational Wealth Mobility and the Role of Inheritance: Evidence from Multiple Generations"
+"著者" = "Adermon, Lindahl & Waldenström (2018)"
+"url" = "https://milescorak.com/wp-content/uploads/2018/10/adermon-lindahl-waldenstrom-2018-ej-intergenerational-wealth-mobility.pdf"
+"一言" = "スウェーデンの親子の資産の順位の相関は0.3〜0.4。"
+
+[["出典"]]
+"時刻" = "11:10"
+"題" = "Generations of Advantage: Multigenerational Correlations in Family Wealth"
+"著者" = "Pfeffer & Killewald (2018)"
+"url" = "https://doi.org/10.1093/sf/sox086"
+"一言" = "アメリカでも、親の資産の順位が1/10段上がると、子の順位は約4段（100段のうち）上がる。"
+
+[["出典"]]
+"時刻" = "11:10"
+"題" = "Why Do Wealthy Parents Have Wealthy Children?"
+"著者" = "Fagereng, Mogstad & Rønning (2021)"
+"url" = "https://doi.org/10.1086/712446"
+"一言" = "韓国から来た養子の研究で、育った家の資産が子の資産と結びつくことを示した。"
+
+[["出典"]]
+"時刻" = "11:10"
+"題" = "Poor Little Rich Kids? The Role of Nature versus Nurture in Wealth and Other Economic Outcomes and Behaviours"
+"著者" = "Black, Devereux, Lundborg & Majlesi (2020)"
+"url" = "https://www.nber.org/papers/w21409"
+"一言" = "スウェーデンの養子では、生みの親より育ての親の資産の方が強く結びつく。"
+
+[["出典"]]
+"時刻" = "11:10"
+"題" = "Intergenerational Top Income Mobility in Sweden: Capitalist Dynasties in the Land of Equal Opportunity?"
+"著者" = "Björklund, Roine & Waldenström (2012)"
+"url" = "https://doi.org/10.1016/j.jpubeco.2012.02.003"
+"一言" = "上位0.1%では、親子の所得の弾力性が約0.9。受け継がれる道は資産と見られる。"
+
+[["出典"]]
+"時刻" = "11:10"
+"題" = "Family, Education, and Sources of Wealth among the Richest Americans, 1982–2012"
+"著者" = "Kaplan & Rauh (2013)"
+"url" = "https://doi.org/10.1257/aer.103.3.158"
+"一言" = "アメリカの上位400人のうち、自分で事業を始めた人は約7割。貧しい家の出は約2割のまま。"
+
+[["出典"]]
+"時刻" = "11:10"
+"題" = "Intergenerational Mobility in the Very Long Run: Florence 1427–2011"
+"著者" = "Barone & Mocetti (2021)"
+"url" = "https://doi.org/10.1093/restud/rdaa075"
+"一言" = "1427年に上だった名字の子孫は、今も稼ぎで約5%、資産で約12%多い。"
+
+[["出典"]]
+"時刻" = "15:12"
+"題" = "Global Tax Evasion Report 2024"
+"著者" = "EU Tax Observatory (2023)"
+"url" = "https://halshs.archives-ouvertes.fr/halshs-04563948v1/file/global_tax_evasion_report_24.pdf"
+"一言" = "資産10億ドル超の3,000人に満たない人に2%の最低課税をかけると、年約2,500億ドル。"
+
+[["出典"]]
+"時刻" = "15:12"
+"題" = "The Role and Design of Net Wealth Taxes in the OECD"
+"著者" = "OECD (2018)"
+"url" = "https://www.oecd.org/en/publications/the-role-and-design-of-net-wealth-taxes-in-the-oecd_9789264290303-en/full-report/component-4.html"
+"一言" = "富裕税をかける OECD の国は、1990年の12か国から2017年には4か国に減った。"
+
+[["出典"]]
+"時刻" = "15:12"
+"題" = "Taxing Entrepreneurial Wealth: Evidence from Norway, 2021–2025"
+"著者" = "Ring (2026, NBER Working Paper 35854。査読前)"
+"url" = "https://www.nber.org/papers/w35854"
+"一言" = "ノルウェーの増税で国を出たのは、多くても約100人だった。"
+
+[["出典"]]
+"時刻" = "15:12"
+"題" = "相続税の税率・令和6年分 相続税の申告事績の概要"
+"著者" = "国税庁"
+"url" = "https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4155.htm"
+"一言" = "相続税の最高税率は55%。課税されたのは亡くなった人の約1割（10.4%）。"
+
+[["出典"]]
+"時刻" = "15:12"
+"題" = "令和8年度税制改正大綱の解説（2026年3月5日）"
+"著者" = "自由民主党"
+"url" = "https://www.jimin.jp/news/information/212612.html"
+"一言" = "とても高い所得への最低課税を、2027年分から約2,000人に広げる。"
+
+[["参考"]]
+"題" = "極度の貧困をなくす費用の試算（2026年6月11日）"
+"著者" = "Oxfam"
+"url" = "https://www.oxfam.org/en/tags/trillionaire"
