@@ -1,0 +1,123 @@
+"番号" = 28
+"題" = "「早生まれなだけで人生不利になる」は本当か？"
+"疑問の数" = 6
+"勉強したこと" = ["アンダードッグ仮説", "非認知能力", "区切りの前後1週間で比べる調べ方"]
+"サムネ" = "028.png"
+
+[["流れ"]]
+"疑問" = "早生まれの不利は、努力すれば追いつけるのか？"
+"分かったこと" = "埼玉県の調査では、中学3年生の早生まれの子のほうが、学校の外で長く勉強し、塾にも通いやすい。それでも学力は偏差値で1.3〜1.8低いままだった。"
+
+[["流れ"]]
+"疑問" = "プロ野球選手は、何月生まれが多いのか？"
+"分かったこと" = "日本のプロ野球選手2,238人のうち、4〜6月生まれは764人、1〜3月生まれは347人。アメリカで多いのは8〜10月生まれで、どちらも学年の区切りの直後。1〜3月生まれの割合は、小学生20%からプロ15.5%まで、上のレベルほど減る。"
+
+[["流れ"]]
+"疑問" = "早生まれでプロになった選手は、逆転するのか？"
+"分かったこと" = "カナダのホッケーには逆転を示す研究がある。日本のプロ野球では逆転せず、19年を超えて続けた選手に1〜3月生まれは少ない。体重に上限のある競馬の騎手だけは、1〜3月生まれが35.5%で一番多い。効いているのは、選ぶ時点の体だった。"
+
+[["流れ"]]
+"疑問" = "教室の中では、何が起きているのか？"
+"分かったこと" = "小学4年生で偏差値3.5あった差は、中学3年生で1.3〜1.8まで縮む。早生まれの子は学校の外の勉強が週に18分長い。それでも差は埋まりきらない。"
+
+[["流れ"]]
+"疑問" = "成績のほかに、何が残るのか？"
+"分かったこと" = "計画どおりにやる力や誘惑に負けない力は偏差値で1ほど低く、学年が上がってもほとんど縮まない。先生や同級生との関係も少し悪く、スポーツや音楽にかける時間は週に12分ほど短い。"
+
+[["流れ"]]
+"疑問" = "その差は、大人になっても残るのか？"
+"分かったこと" = "埼玉県のある市では、進んだ高校の偏差値が4.7違った。30代前半の男性の年収は、学年で一番遅く生まれた人のほうが4%低い。学年の区切りの直前の1週間に生まれた人は、直後の1週間に生まれた人より、自殺の割合が約27%高かった。"
+
+[["流れ"]]
+"疑問" = "親は、学年の区切りに気づいているのか？"
+"分かったこと" = "誕生日ごとの生まれた数は、4月1日が少なく、4月2日が飛び抜けて多い。毎年1,800人を超える赤ちゃんの誕生日が、区切りの後へ移っていた。アメリカでは入学を1年遅らせる家庭があるが、日本で遅らせられるのは教育委員会が認めたときだけ。"
+
+[["流れ"]]
+"疑問" = "結局、「早生まれなだけで人生不利になる」は本当なのか？"
+"分かったこと" = "日本では、差は大人になっても残り、努力では埋まりきらない。ノルウェーやドイツでは、収入の差はほとんど消えていた。なぜ日本で残るのかをはっきり答えた研究は、まだ無い。"
+
+[["まとめ"]]
+"画像" = "028_summary_01.png"
+"題" = "プロ野球選手は、生まれた月で偏っているのか"
+
+[["まとめ"]]
+"画像" = "028_summary_02.png"
+"題" = "早生まれでプロになった選手は、逆転するのか"
+
+[["まとめ"]]
+"画像" = "028_summary_03.png"
+"題" = "早生まれの子は、勉強で追いつけるのか"
+
+[["まとめ"]]
+"画像" = "028_summary_04.png"
+"題" = "早生まれの差は、大人になっても残るのか"
+
+[["まとめ"]]
+"画像" = "028_summary_05.png"
+"題" = "親は、学年の区切りに気づいているのか"
+
+[["まとめ"]]
+"画像" = "028_summary_06.png"
+"題" = "早生まれは、どこまで不利なのか"
+
+[["出典"]]
+"時刻" = "1:27"
+"題" = "Characteristics of Relative Age Effects and Anthropometric Data in Japanese Recreational and Elite Male Junior Baseball Players"
+"著者" = "Katsumata et al., 2018（Sports Medicine - Open）"
+"url" = "https://doi.org/10.1186/s40798-018-0165-9"
+"一言" = "日本とアメリカのプロ野球選手、日本の小学生から高校生までの選手の生まれ月を数えた研究。"
+
+[["出典"]]
+"時刻" = "4:59"
+"題" = "Relationship Between the Relative Age Effect and Lengths of Professional Careers in Male Japanese Baseball Players"
+"著者" = "Nakata, 2017（Sports Medicine - Open）"
+"url" = "https://doi.org/10.1186/s40798-017-0090-3"
+"一言" = "日本のプロ野球選手が、生まれ月によってどれだけ長く続けたかを調べた研究。"
+
+[["出典"]]
+"時刻" = "4:59"
+"題" = "Relative age effects in Japanese athletes"
+"著者" = "Nakata & Sakamoto, 2014（Journal of Physical Fitness and Sports Medicine）"
+"url" = "https://doi.org/10.7600/jpfsm.3.467"
+"一言" = "競技ごとの生まれ月の偏り。騎手だけ1〜3月生まれが多いことを示した。"
+
+[["出典"]]
+"時刻" = "8:08"
+"題" = "Month-of-Birth Effects on Skills and Skill Formation"
+"著者" = "Yamaguchi, Ito & Nakamuro, 2023（IZA Discussion Paper 15895）"
+"url" = "https://docs.iza.org/dp15895.pdf"
+"一言" = "埼玉県の小4〜中3を毎年追った調査。学力、非認知能力、放課後の時間の使い方、進んだ高校まで。この動画の中心の資料。"
+
+[["出典"]]
+"時刻" = "10:42"
+"題" = "Association of Relative Age in the School Year With Diagnosis of Intellectual Disability, Attention-Deficit/Hyperactivity Disorder, and Depression"
+"著者" = "Root et al., 2019（JAMA Pediatrics）"
+"url" = "https://doi.org/10.1001/jamapediatrics.2019.3194"
+"一言" = "イギリスの100万人以上の記録で、学年の中の生まれの早さと診断の関係を調べた研究。"
+
+[["出典"]]
+"時刻" = "13:08"
+"題" = "Actual age at school entry, educational outcomes, and earnings"
+"著者" = "Kawaguchi, 2011（Journal of the Japanese and International Economies）"
+"一言" = "日本の男性で、30代前半の年収が学年で一番遅く生まれた人のほうが4%低いことを示した研究。"
+
+[["出典"]]
+"時刻" = "13:08"
+"題" = "Relative Age in School and Suicide among Young Individuals in Japan: A Regression Discontinuity Approach"
+"著者" = "Matsubayashi & Ueda, 2015（PLOS ONE）"
+"url" = "https://doi.org/10.1371/journal.pone.0135349"
+"一言" = "学年の区切りの前後1週間に生まれた人を比べ、若い人の自殺の割合の差を調べた研究。"
+
+[["出典"]]
+"時刻" = "15:57"
+"題" = "School Entry Cutoff Date and the Timing of Births"
+"著者" = "Shigeoka, 2015（NBER Working Paper 21402）"
+"url" = "https://www.nber.org/papers/w21402"
+"一言" = "日本の誕生日ごとの生まれた数から、区切りの前後で誕生日が移っていることを示した研究。"
+
+[["出典"]]
+"時刻" = "18:29"
+"題" = "Relative Age Effects in Male Japanese Professional Athletes: a 25-Year Historical Analysis"
+"著者" = "Sasano, Katsumata & Nakata, 2020（Sports Medicine - Open）"
+"url" = "https://doi.org/10.1186/s40798-020-00277-4"
+"一言" = "日本のプロ野球の生まれ月の偏りが、この25年で薄まってきたことを示した研究。"
