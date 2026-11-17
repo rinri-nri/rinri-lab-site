@@ -1,0 +1,154 @@
+"番号" = 29
+"題" = "なぜ炎上する不倫と炎上しない不倫があるのか"
+"youtube" = "https://youtu.be/MK53IUMPYp4"
+"公開日" = "2026-11-19"
+"サムネ" = "029.png"
+"疑問の数" = 18
+"勉強したこと" = ["モラル・デカップリング", "偽善が嘘より嫌われる理由", "広がり方の予測の限界"]
+
+[["流れ"]]
+"疑問" = "同じ不倫なのに、なぜ叩かれ方が違うのか？"
+"分かったこと" = "同じ1件の不倫の2人で、その後の半年にネットのニュースに名前が出た回数は442回と249回。別の年には、不倫を認めた政党の代表の党の支持率が、数日後の調査で結党以来の最高になった。"
+
+[["流れ"]]
+"疑問" = "同じ「不倫が報じられた」で、差はどれくらいつくのか？"
+"分かったこと" = "不倫が報じられた17のウィキペディアの記事で、いちばん開かれた日から2週間の閲覧を数えると、約13万回から約496万回まで、約38倍の差があった。測っているのは怒った人の数ではなく、調べた人の数。"
+
+[["流れ"]]
+"疑問" = "ひどい不倫ほど、強く責められるのか？"
+"分かったこと" = "日本の実験では、相手がどんな人か、どこで出会ったか、夫婦の会話が多いか少ないかで、非難の強さはほとんど変わらなかった。変えたのは、見る側の年齢と、不倫した人の職業だった。"
+
+[["流れ"]]
+"疑問" = "不倫しても仕事を失わない人は、何が違うのか？"
+"分かったこと" = "クリントン大統領の支持率は、発覚した3か月間に5.6ポイント上がった。人は「行いは悪いが、仕事は別」と切り離すことがある。曲や政策を売る人は切り離してもらえるが、人柄を売る人と、自分の掲げた看板を裏切った人は切り離してもらえない。"
+
+[["流れ"]]
+"疑問" = "炎上させているのは、誰なのか？"
+"分かったこと" = "炎上1件に書き込むのは、ネットを使う人のおよそ7万人に1人。炎上を知った経路の1位はテレビのバラエティ番組（58.8%）で、Twitter は23.2%。企業は株価のために早く動くので、CMの降板は怒りの大きさの証拠にならない（最後の1点は動画の読み）。"
+
+[["流れ"]]
+"疑問" = "燃えるかどうかは、前もって決まっているのか？"
+"分かったこと" = "謝るか否定するかは、研究の結果が分かれていて決着していない。ほかのニュースが多い時期はスキャンダルが小さくなる。Twitter の投稿の広がりは、いちばんよくできた予測でも、大きさの違いの半分も説明できなかった。"
+
+[["流れ"]]
+"疑問" = "不倫に石を投げているのは、誰なのか？"
+"分かったこと" = "「間違っている」と答える人が9割、結婚している男性で経験のある人がおよそ半分なら、少なくとも4割は両方に入る。不倫をした人は、自分の不倫より他人の不倫を厳しく裁いた。大勢で叩くと、叩いた側の印象が悪くなる実験もある。"
+
+[["流れ"]]
+"疑問" = "結局、なぜ炎上する不倫と炎上しない不倫があるのか？"
+"分かったこと" = "違いは不倫の重さではなく、何を売っていたか、どれだけ報じられたか、そして運。日本の不倫の炎上をまとめて測ったデータはまだ無く、どの不倫が炎上するかを前もって当てられるかは分かっていない。"
+
+[["まとめ"]]
+"画像" = "029_summary_01.png"
+"題" = "同じ「不倫が報じられた」で、差はどれくらいつくのか"
+
+[["まとめ"]]
+"画像" = "029_summary_02.png"
+"題" = "「行いは悪いが、仕事は別」と言ってもらえるのは誰か"
+
+[["まとめ"]]
+"画像" = "029_summary_03.png"
+"題" = "炎上させているのは、誰か"
+
+[["まとめ"]]
+"画像" = "029_summary_04.png"
+"題" = "燃えるかどうかは、前もって決まっているのか"
+
+[["まとめ"]]
+"画像" = "029_summary_05.png"
+"題" = "石を投げているのは、誰か"
+
+[["まとめ"]]
+"画像" = "029_summary_06.png"
+"題" = "なぜ炎上する不倫と炎上しない不倫があるのか"
+
+# 「時刻」はその出典が出る章の頭（VideoProject の 完成/YouTubeチャプター.txt。カットインを入れた本番の書き出しの時刻）
+[["出典"]]
+"時刻" = "0:00"
+"題" = "不倫―実証分析が示す全貌"
+"著者" = "五十嵐彰・迫田さやか, 2023（中公新書）"
+"一言" = "不倫を「間違っている」と答える人の割合、経験のある人の割合、どんな不倫が強く非難されるかの実験。"
+
+[["出典"]]
+"時刻" = "4:51"
+"題" = "Presidential Job Approval: Bill Clinton's High Ratings in the Midst of Crisis, 1998"
+"著者" = "Gallup, 1999"
+"url" = "https://news.gallup.com/poll/4609/presidential-job-approval-bill-clintons-high-ratings-midst.aspx"
+"一言" = "クリントン大統領の支持率が、発覚と弾劾の時期に上がっていたことを示す調査のまとめ。"
+
+[["出典"]]
+"時刻" = "4:51"
+"題" = "Tip of the Hat, Wag of the Finger: How Moral Decoupling Enables Consumers to Admire and Admonish"
+"著者" = "Bhattacharjee, Berman & Reed, 2013（Journal of Consumer Research）"
+"url" = "https://doi.org/10.1086/667786"
+"一言" = "悪い行いを責めたまま、その人の仕事は別だと切り離して応援を続ける考え方を示した実験。"
+
+[["出典"]]
+"時刻" = "4:51"
+"題" = "Consumers' Responses to Public Figures' Transgression: Moral Reasoning Strategies and Implications for Endorsed Brands"
+"著者" = "Lee & Kwak, 2016（Journal of Business Ethics）"
+"url" = "https://doi.org/10.1007/s10551-015-2544-1"
+"一言" = "悪い行いがその人の仕事と関係しているほど、切り離してもらえないことを示した実験。"
+
+[["出典"]]
+"時刻" = "4:51"
+"題" = "Why Do We Hate Hypocrites? Evidence for a Theory of False Signaling"
+"著者" = "Jordan, Sommers, Bloom & Rand, 2017（Psychological Science）"
+"url" = "https://doi.org/10.1177/0956797616685771"
+"一言" = "他人を戒めていた人が同じことをすると、嘘をついた人より悪く見られることを示した実験。"
+
+[["出典"]]
+"時刻" = "8:55"
+"題" = "令和元年版 情報通信白書「誰が炎上に加わっているのか」「炎上はどのように認知されるのか」"
+"著者" = "総務省, 2019"
+"url" = "https://www.soumu.go.jp/johotsusintokei/whitepaper/ja/r01/html/nd114310.html"
+"一言" = "炎上に書き込む人の少なさと、炎上を知った経路（テレビのバラエティ番組が1位）。"
+
+[["出典"]]
+"時刻" = "8:55"
+"題" = "Celebrity Endorsements, Firm Value, and Reputation Risk: Evidence from the Tiger Woods Scandal"
+"著者" = "Knittel & Stango, 2014（Management Science）"
+"url" = "https://ideas.repec.org/a/inm/ormnsc/v60y2014i1p21-37.html"
+"一言" = "タイガー・ウッズ選手の報道のあと、スポンサー企業の株の価値が2%を超えて下がったことを示した研究。"
+
+[["出典"]]
+"時刻" = "8:55"
+"題" = "Managing Negative Celebrity Endorser Publicity: How Announcements of Firm (Non)Responses Affect Stock Returns"
+"著者" = "Hock & Raithel, 2020（Management Science）"
+"url" = "https://ideas.repec.org/a/inm/ormnsc/v66y2020i3p1473-1495.html"
+"一言" = "有名人の不祥事128件で、企業の対応の早さと株価の動きを調べた研究。"
+
+[["出典"]]
+"時刻" = "12:03"
+"題" = "Why Politicians Won't Apologize: Communication Effects in the Aftermath of Sex Scandals"
+"著者" = "Hamrak, Simonovits, Rusnak & Szucs, 2024（British Journal of Political Science）"
+"url" = "https://doi.org/10.1017/S0007123424000292"
+"一言" = "架空の議員の不倫を1万人を超える人に読んでもらい、謝る場合と否定する場合を比べた実験。"
+
+[["出典"]]
+"時刻" = "12:03"
+"題" = "Scandal Potential: How Political Context and News Congestion Affect the President's Vulnerability to Media Scandal"
+"著者" = "Nyhan, 2015（British Journal of Political Science）"
+"url" = "https://doi.org/10.1017/S0007123413000458"
+"一言" = "ほかのニュースが多い時期は、大統領のスキャンダルが記事になりにくいことを示した研究。"
+
+[["出典"]]
+"時刻" = "12:03"
+"題" = "Exploring Limits to Prediction in Complex Social Systems"
+"著者" = "Martin, Hofman, Sharma, Anderson & Watts, 2016（WWW 2016）"
+"url" = "https://arxiv.org/abs/1602.01013"
+"一言" = "Twitter の投稿の広がりを前もって当てようとして、当てられる度合いに上限があることを示した研究。"
+
+[["出典"]]
+"時刻" = "14:37"
+"題" = "Are Cheaters Sexual Hypocrites? Sexual Hypocrisy, the Self-Serving Bias, and Personality Style"
+"著者" = "Warach, Josephs & Gorman, 2019（Personality and Social Psychology Bulletin）"
+"url" = "https://doi.org/10.1177/0146167219833392"
+"一言" = "不倫をしたこともされたこともある人が、自分の不倫より他人の不倫を厳しく裁くことを示した研究。"
+
+[["出典"]]
+"時刻" = "14:37"
+"題" = "The Paradox of Viral Outrage"
+"著者" = "Sawaoka & Monin, 2018（Psychological Science）"
+"url" = "https://doi.org/10.1177/0956797618780658"
+"一言" = "大勢が同じように怒っていると、同じ批判のコメントでも書いた人の印象が悪くなることを示した実験。"
