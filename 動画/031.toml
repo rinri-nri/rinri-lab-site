@@ -1,0 +1,184 @@
+"番号" = 31
+"題" = "宝くじを買う人は愚かなのか？"
+"サムネ" = "031.png"
+"疑問の数" = 15
+"勉強したこと" = ["小さな確率の重みづけ（プロスペクト理論）", "1枚ずつ決めると安く見える「狭い枠」", "抽せんを待つ楽しみ"]
+
+[["流れ"]]
+"疑問" = "宝くじを買う人は、計算ができないだけなのか？"
+"分かったこと" = "アメリカの約3,000人の調査では、宝くじの払い戻しの予想は平均29%で、実際（60%）より悪く見ていた。フィンランドの約70万人の男性では、計算の点が高い人ほど馬券を買っていた。"
+
+[["流れ"]]
+"疑問" = "宝くじは、本当に半分戻るのか？"
+"分かったこと" = "国の資料では、宝くじの払戻率は45.7%で、競馬などの公営競技（およそ75%）より低い。年末ジャンボを10枚買うと、約9割の人は300円しか戻らない。平均の「半分」は、何億円の当たりまで入れたときの数字。"
+
+[["流れ"]]
+"疑問" = "買う人は、損を知らないのか？"
+"分かったこと" = "日本の調査では、宝くじのイメージに「夢を買えるチャンス」が87.5%、同じ調査で「どうせ当たらない」も34.6%。アメリカの調査では、計算の苦手さと結びつくのは使う額の43%で、「楽しそう」といった好みの質問のほうが、使う額をよく説明した。"
+
+[["流れ"]]
+"疑問" = "確率が分かれば、買わないのか？"
+"分かったこと" = "カナダで学生に賭けの確率を教えると、計算はできるようになり、思い違いもしなくなった。それでも、賭ける人の割合・時間・額は、どの組でも変わらなかった。"
+
+[["流れ"]]
+"疑問" = "なぜ分かっていても、手が伸びるのか？"
+"分かったこと" = "売れ方から逆算すると、買う人は、1等が実際の230倍当たりやすいかのようにふるまっていた。同じ人たちが、払い戻しは29%と悲観的に答える。小さな確率を重く感じる、1枚ずつだと安く見える、周りが買う、自分の立場への不満の4つが、手を伸ばさせる。"
+
+[["流れ"]]
+"疑問" = "夢には、いくらの価値があるのか？"
+"分かったこと" = "オランダでくじの券をタダで配ると、抽せん前の幸せが10点満点で0.25〜0.40点上がった。くじのことを考えなかった人は上がらなかった。高額当せん者の生活の満足度は10年以上上がったままだが、日々の気分はほとんど変わらなかった。"
+
+[["流れ"]]
+"疑問" = "結局、宝くじを買う人は愚かなのか？"
+"分かったこと" = "損を知らないのではない。頭では当たらないと分かっていて、決める瞬間だけ「当たるかも」と感じ、抽せんまでの夢を買っている。ほとんどの人には10分の1しか戻らないので、夢の値段としても高すぎる（最後の1点は作者の意見）。"
+
+[["まとめ"]]
+"画像" = "031_summary_01.png"
+"題" = "宝くじは本当に半分戻るのか"
+
+[["まとめ"]]
+"画像" = "031_summary_02.png"
+"題" = "買う人は損を知らないのか"
+
+[["まとめ"]]
+"画像" = "031_summary_03.png"
+"題" = "確率が分かれば買わないのか"
+
+[["まとめ"]]
+"画像" = "031_summary_04.png"
+"題" = "なぜ分かっていても手が伸びるのか"
+
+[["まとめ"]]
+"画像" = "031_summary_05.png"
+"題" = "夢にはいくらの価値があるのか"
+
+[["まとめ"]]
+"画像" = "031_summary_06.png"
+"題" = "宝くじを買う人は何を考えているのか"
+
+# 「時刻」はその出典が出る章の頭。VideoProject の 完成/YouTubeチャプター.txt（本番の書き出し 2026-11-24）に合わせた
+[["出典"]]
+"時刻" = "0:00"
+"題" = "Is gambling a tax on stupidity?"
+"著者" = "Suhonen, Saastamoinen, Forrest & Kainulainen, 2020（リバプール大学の作業論文）"
+"url" = "https://ideas.repec.org/p/liv/livedp/202012.html"
+"一言" = "フィンランドの約70万人の男性で、計算の点と、国営の馬券を買った記録をつないだ研究。"
+
+[["出典"]]
+"時刻" = "0:00"
+"題" = "What Drives Demand for State-Run Lotteries? Evidence and Welfare Implications"
+"著者" = "Lockwood, Allcott, Taubinsky & Sial, 2022（NBER 作業論文）"
+"url" = "https://www.nber.org/papers/w28975"
+"一言" = "アメリカの約3,000人の調査と売れ方から、買う人が払い戻しや1等をどう見ているかを調べた研究。"
+
+[["出典"]]
+"時刻" = "0:00"
+"題" = "第17回「宝くじ」に関する世論調査 報告書ポイント"
+"著者" = "日本宝くじ協会, 2025"
+"url" = "https://jla-takarakuji.or.jp/data/cyousa/R7yoronchosa.pdf"
+"一言" = "18歳以上の44.4%が、最近1年間に宝くじを買ったという調査。"
+
+[["出典"]]
+"時刻" = "1:06"
+"題" = "第1回宝くじ活性化検討会 説明資料"
+"著者" = "総務省, 2011"
+"url" = "https://www.soumu.go.jp/main_content/000131892.pdf"
+"一言" = "宝くじと公営競技の払戻率を並べた表（2008年度の実績）。"
+
+[["出典"]]
+"時刻" = "1:06"
+"題" = "年末ジャンボ宝くじ（第1134回）発売概要・当せん金"
+"著者" = "宝くじ公式サイト, 2026"
+"url" = "https://www.takarakuji-official.jp/brand/jumbo/"
+"一言" = "1枚300円、2,000万枚を1組とした当たりの本数と金額。"
+
+[["出典"]]
+"時刻" = "1:06"
+"題" = "令和3年 全国都市交通特性調査 集計結果"
+"著者" = "国土交通省"
+"url" = "https://www.mlit.go.jp/report/press/content/001707553.pdf"
+"一言" = "1人が1日に出かける回数。交通事故のたとえの計算に使った。"
+
+[["出典"]]
+"時刻" = "4:38"
+"題" = "宝くじ統計調査 令和7年度"
+"著者" = "日本宝くじ協会, 2025"
+"url" = "https://jla-takarakuji.or.jp/data/cyousa/R07_toukei.pdf"
+"一言" = "宝くじを買う理由・買わない理由と、宝くじのイメージを聞いた調査。"
+
+[["出典"]]
+"時刻" = "6:56"
+"題" = "Does learning about the mathematics of gambling change gambling behavior?"
+"著者" = "Williams & Connolly, 2006（Psychology of Addictive Behaviors）"
+"url" = "https://doi.org/10.1037/0893-164X.20.1.62"
+"一言" = "大学生に賭けの確率を教えて、半年後に賭ける量が変わるかを比べた実験。"
+
+[["出典"]]
+"時刻" = "8:41"
+"題" = "Prospect Theory: An Analysis of Decision under Risk"
+"著者" = "Kahneman & Tversky, 1979（Econometrica）"
+"url" = "https://doi.org/10.2307/1914185"
+"一言" = "小さな確率の大金を選び、小さな確率の損には保険をかける、という選び方を示した問題を含む論文。"
+
+[["出典"]]
+"時刻" = "8:41"
+"題" = "Replicating patterns of prospect theory for decision under risk"
+"著者" = "Ruggeri ほか, 2020（Nature Human Behaviour）"
+"url" = "https://doi.org/10.1038/s41562-020-0886-x"
+"一言" = "1979年の問題を19か国で出し直した追試。"
+
+[["出典"]]
+"時刻" = "8:41"
+"題" = "Myopic risk-seeking: The impact of narrow decision bracketing on lottery play"
+"著者" = "Haisley, Mostafa & Loewenstein, 2008（Journal of Risk and Uncertainty）"
+"url" = "https://doi.org/10.1007/s11166-008-9041-1"
+"一言" = "くじを1枚ずつ勧めると、まとめて勧めるより多く買われることを示した実験。"
+
+[["出典"]]
+"時刻" = "8:41"
+"題" = "宝くじ統計調査 令和5年度 第1回報告書"
+"著者" = "日本宝くじ協会, 2023"
+"url" = "https://jla-takarakuji.or.jp/data/cyousa/R05_toukei_01.pdf"
+"一言" = "ジャンボ宝くじを買った人が、1回に買った枚数。"
+
+[["出典"]]
+"時刻" = "8:41"
+"題" = "Social Explanations of Lottery Play: New Evidence Based on National Survey Data"
+"著者" = "Lutter, Tisch & Beckert, 2018（Journal of Gambling Studies）"
+"url" = "https://doi.org/10.1007/s10899-018-9748-0"
+"一言" = "ドイツの約6,000人で、同じ家に宝くじを買う人がいるかと、自分が買うかを調べた研究。"
+
+[["出典"]]
+"時刻" = "8:41"
+"題" = "Subjective Relative Income and Lottery Ticket Purchases"
+"著者" = "Haisley, Mostafa & Loewenstein, 2008（Journal of Behavioral Decision Making）"
+"url" = "https://doi.org/10.1002/bdm.588"
+"一言" = "自分の収入を低いと感じさせると、くじを多く買うかを調べた実験。"
+
+[["出典"]]
+"時刻" = "13:23"
+"題" = "The joy of lottery play: evidence from a field experiment"
+"著者" = "Burger, Hendriks, Pleeging & van Ours, 2020（Experimental Economics）"
+"url" = "https://doi.org/10.1007/s10683-020-09649-9"
+"一言" = "オランダで国営くじの券を無料で配り、抽せんの前後の幸せを比べた実験。"
+
+[["出典"]]
+"時刻" = "13:23"
+"題" = "'Let me dream on!' Anticipatory emotions and preference for timing in lotteries"
+"著者" = "Kocher, Krawczyk & van Winden, 2014（Journal of Economic Behavior & Organization）"
+"url" = "https://doi.org/10.1016/j.jebo.2013.12.006"
+"一言" = "今夜抽せんの券と、明日の夜に抽せんの券のどちらを選ぶかを調べた実験。"
+
+[["出典"]]
+"時刻" = "13:23"
+"題" = "Long-Run Effects of Lottery Wealth on Psychological Well-Being"
+"著者" = "Lindqvist, Östling & Cesarini, 2020（Review of Economic Studies）"
+"url" = "https://doi.org/10.1093/restud/rdaa006"
+"一言" = "スウェーデンの宝くじの高額当せん者を、何年もあとまで調べた研究。"
+
+[["出典"]]
+"時刻" = "13:23"
+"題" = "The Own and Social Effects of an Unexpected Income Shock: Evidence from the Dutch Postcode Lottery"
+"著者" = "Kuhn, Kooreman, Soetevent & Kapteyn, 2008（NBER 作業論文）"
+"url" = "https://www.nber.org/papers/w14035"
+"一言" = "オランダの郵便番号で当たるくじで、当たった家とその近所の暮らしを調べた研究。"
